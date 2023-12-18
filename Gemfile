@@ -11,6 +11,7 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
 gem "pg", "~> 1.5.4"
+gem "slim"
 
 # For deploys to digital ocean:q
 gem 'capistrano', '~> 3.11'
