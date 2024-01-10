@@ -5,15 +5,15 @@ default: &default
 
 development:
   <<: *default
-  database: port_development
+  database: porty_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: port_test
+  database: porty_test
 
 production:
   <<: *default
-  database: port_production
+  database: porty_production

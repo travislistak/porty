@@ -12,6 +12,12 @@ gem "sprockets-rails"
 # gem "sqlite3", "~> 1.4"
 gem "pg", "~> 1.5.4"
 
+# For deploys to digital ocean:q
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
