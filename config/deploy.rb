@@ -8,6 +8,14 @@ set :repo_url, "git@github.com:travislistak/porty.git"
 set :deploy_to, "/home/deploy/#{fetch :application}"
 set :branch, "main"
 
+# testing this out. This can be changed to true to restart WITH touch (the old way).
+set :passenger_restart_with_touch, false
+# from capistrano post install message
+# If you are running passenger in standalone mode, it is possible for you to put passenger in your
+# Gemfile and rely on capistrano-bundler to install it with the rest of your bundle.
+# If you are installing passenger during your deployment AND you want to restart using `passenger-config restart-app`,
+# you need to set `:passenger_in_gemfile` to `true` in your `config/deploy.rb`.
+
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
