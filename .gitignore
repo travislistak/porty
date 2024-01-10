@@ -10,6 +10,10 @@
 # Ignore all environment files (except templates).
 /.env*
 !/.env*.erb
+.idea/*
+.idea
+.idea*
+.idea/porty.iml
 
 # Ignore all logfiles and tempfiles.
 /log/*
