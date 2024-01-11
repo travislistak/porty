@@ -14,10 +14,10 @@ gem "pg", "~> 1.5.4"
 gem "slim"
 
 # For deploys to digital ocean:q
-gem 'capistrano', '~> 3.11'
-gem 'capistrano-rails', '~> 1.4'
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
 
