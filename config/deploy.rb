@@ -2,7 +2,10 @@
 lock "~> 3.18.0"
 
 set :application, "porty"
-set :repo_url, "git@github.com:travislistak/porty.git"
+# set :repo_url, "git@github.com:travislistak/porty.git"
+set :repo_url, 'https://github.com/travislistak/porty.git'
+set :git_http_username, 'travislistak'
+set :git_http_password, Rails.application.credentials[:github_access_token]
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
