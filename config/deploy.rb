@@ -14,7 +14,7 @@ set :deploy_to, "/home/deploy/#{fetch :application}"
 set :branch, "main"
 
 # testing this out. This can be changed to true to restart WITH touch (the old way).
-# set :passenger_restart_with_touch, false
+set :passenger_restart_with_touch, false
 # from capistrano post install message
 # If you are running passenger in standalone mode, it is possible for you to put passenger in your
 # Gemfile and rely on capistrano-bundler to install it with the rest of your bundle.
