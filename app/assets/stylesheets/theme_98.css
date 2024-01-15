@@ -20,15 +20,47 @@
 }
 body {
   background: var(--desktop-blue);
+  color: black;
 }
+
+/* Navigation */
 .navbar {
   background: var(--windows-grey) !important;
   font-family: "MS Sans Serif";
-  color: var(--black);
-  .li {
-    color: pink !important;
+
+  .navbar-brand, .nav-link {
+    color: var(--black)
+  }
+  .nav-link{
+    &.active {
+      color: var(--black);
+    }
+  }
+  .dropdown-toggle {
+    &.show {
+      color: var(--black);
+    }
+    &.hover {
+      /* something */
+    }
+  }
+  .dropdown-menu {
+    .dropdown-item {
+      color: var(--black);
+    }
+    .dropdown-divider {
+      color: var(--black);
+      border: 1px solid var(--black);
+    }
   }
 }
+/*.nav-link {*/
+/*  color: black;*/
+/*  &.active{*/
+/*    --bs-navbar-active-color: black;*/
+/*  }*/
+/*}*/
+
 
 .top-nav.navbar.navbar-fixed-top li a:hover, .top-nav.navbar.navbar-fixed-top li.active a, .top-nav.navbar.navbar-fixed-top li:focus {
   background-color: var(--windows-grey-light) !important;
@@ -159,16 +191,16 @@ body {
 
 /* BUTTONS */
 .btn {
-  border-width: 1px !important;
-  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;
+  border-width: 1.5px !important;
+  border-color: var(--white) var(--black) var(--black) var(--white) !important;
   border-style: solid !important;
   border-radius: 0 !important;
-  outline: 1px solid black;
+  /* outline: 1px solid black; Also not sure this is needed */
   background: var(--windows-grey) !important;
   color: var(--black) !important;
   font-family: 'MS Sans Serif' !important;
   font-weight: lighter !important;
-  box-shadow: 1px 1px 1px 1px black !important;
+  /* box-shadow: 1px 1px 1px 1px black !important; Not sure this is right */
   text-align: center !important;
 }
 .btn-primary, .btn-ghost {
