@@ -1,7 +1,7 @@
 :root {
   --desktop-blue: #3a6ea5;
   --selection-blue: #002468;
-	--links-blue: #0f477b;
+  --links-blue: #0f477b;
   --windows-grey: #cec9c1;
   --windows-grey-dark: #c7c2b8;
   --windows-outline-dark-grey: #7F7F7F;
@@ -45,6 +45,26 @@ body {
     }
   }
   .dropdown-menu {
+      background: var(--windows-grey);
+      border-width: 2px;
+      border-style: solid;
+      border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
+      border-radius: 0;
+      outline: 2px outset black;
+      padding: 0;
+
+    li a {
+      /*height: 30px;*/
+      font-family: "MS Sans Serif";
+      /*font-size: 12px !important;*/
+      font-weight: lighter;
+      /*line-height: 0 !important;*/
+      &:hover {
+        background-color: var(--selection-blue) !important;
+        color: var(--white);
+      }
+    }
+
     .dropdown-item {
       color: var(--black);
     }
@@ -54,12 +74,6 @@ body {
     }
   }
 }
-/*.nav-link {*/
-/*  color: black;*/
-/*  &.active{*/
-/*    --bs-navbar-active-color: black;*/
-/*  }*/
-/*}*/
 
 
 .top-nav.navbar.navbar-fixed-top li a:hover, .top-nav.navbar.navbar-fixed-top li.active a, .top-nav.navbar.navbar-fixed-top li:focus {
@@ -250,39 +264,7 @@ button:hover{
 .dropdown{
   /* margin-top: 18px !important; */
 }
-.dropdown-menu {
-  background: var(--windows-grey) !important;
-  min-width: 150px !important;
-  box-shadow: 0 0 0 !important;
-  margin-top: 5px !important;
-  border-width: 1px !important;
-  border-style: solid !important;
-  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;
-  outline-width: 1px !important;
-  outline-style: solid !important;
-  outline-color: var(--black) !important;
-}
 
-.dropdown-menu li a {
-  height: 30px !important;
-  font-family: "MS Sans Serif" !important;
-  font-size: 12px !important;
-  font-weight: lighter !important;
-  line-height: 0 !important;
-}
-.navbar-nav .dropdown-menu li a {
-  padding-top: 15px !important;
-}
-.dropdown-menu li {
-  height: 30px !important;
-}
-.dropdown-menu li a:hover {
-  background-color: var(--selection-blue) !important;
-  color: var(--white) !important;
-}
-.dropdown-menu li.divider {
-  height: 0 !important;
-}
 /* DROPDOWN MENU */
 
 /* SLAB DIALOG (ADD NOTE) */
