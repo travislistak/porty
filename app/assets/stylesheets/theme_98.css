@@ -4,6 +4,7 @@
   --links-blue: #0f477b;
   --windows-grey: #cec9c1;
   --windows-grey-dark: #c7c2b8;
+  --windows-grey-extra-dark: #918d84;
   --windows-outline-dark-grey: #7F7F7F;
   --windows-outline-light-grey: #D0CCC4;
   --windows-grey-light: #f2efe9;
@@ -40,9 +41,9 @@ body {
     &.show {
       color: var(--black);
     }
-    &.hover {
-      /* something */
-    }
+    /*&.hover {*/
+    /*  !* something *!*/
+    /*}*/
   }
   .dropdown-menu {
       background: var(--windows-grey);
@@ -54,11 +55,8 @@ body {
       padding: 0;
 
     li a {
-      /*height: 30px;*/
       font-family: "MS Sans Serif";
-      /*font-size: 12px !important;*/
       font-weight: lighter;
-      /*line-height: 0 !important;*/
       &:hover {
         background-color: var(--selection-blue) !important;
         color: var(--white);
@@ -70,49 +68,82 @@ body {
     }
     .dropdown-divider {
       color: var(--black);
-      border: 1px solid var(--black);
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      border-top-color: var(--windows-outline-dark-grey);
+      border-bottom-color: var(--white);
+      border-width: 1px 0;
+      border-style: solid none;
     }
   }
 }
 
 
-.top-nav.navbar.navbar-fixed-top li a:hover, .top-nav.navbar.navbar-fixed-top li.active a, .top-nav.navbar.navbar-fixed-top li:focus {
-  background-color: var(--windows-grey-light) !important;
-  color: var(--black) !important;
-}
+/* BUTTONS */
+.btn.btn-primary {
+  background: var(--windows-grey);
+  border-width: 0 1px 1px 0;
+  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
+  border-style: solid;
+  border-radius: 0;
+  outline: 1px outset black;
+  box-shadow: 0 0 0 2px black, 1px 0 0 2px black, 1px 1px 0 3px black;
+  color: var(--black);
+  margin: .75rem .50rem;
 
 
-/* TOP LEASE AREA */
-.navbar.navbar-fixed-top.sub-nav {
-  background: var(--windows-grey) !important;
-  border-width: 2px !important;
-  border-style: solid !important;
-  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;
-  box-shadow: 0 0 0 !important;
-}
-/* TOP LEASE AREA */
+  /*font-family: 'MS Sans Serif';*/
+  /*text-align: center;*/
+  /*min-width: 100px;*/
+  /*line-height: 0.6;*/
 
-/* LOGIN */
-.center-block {
-  border-width: 1px !important;
-  border-style: solid !important;
-  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;
+  &:hover {
+    /* Must overwrite the bootstrap hover, bootstrap default is transparent */
+    /*--bs-btn-hover-border-color: var(--windows-outline-dark-grey);*/
+    border-color: var(--white) var(--windows-outline-light-grey) var(--windows-outline-light-grey) var(--white);
+    background: var(--windows-outline-dark-grey);
+    outline: 1px inset black;
+    /*color: var(--white);*/
+  }
 }
-.center-block .panel.panel-default, .center-block .panel.panel-default .panel-footer{
-  background: var(--windows-grey) !important;
-  border-radius: 0 !important;
-  border: 0 !important;
-  margin: 0 !important;
-}
-.acima-brand {
-  background-image: url("") !important;
-/*  background-image: url("chrome-extension://acgcefngoifnbgjcfbbaeeelpnelpgae/images/acima98_logo.png") !important; */
-}
+/*.btn-primary, .btn-ghost {*/
+/*  line-height: 0.4 !important;*/
+/*  width: 150px !important;*/
+/*  font-size: 12px !important;*/
+/*}*/
+/*.btn-xs {*/
+/*  line-height: 1.5 !important;*/
+/*}*/
+/*.btn-sm {*/
+/*  line-height: 1.2 !important;*/
+/*  width: 130px !important;*/
+/*}*/
+/*button {*/
+/*  border-width: 1px !important;*/
+/*  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;*/
+/*  border-style: solid !important;*/
+/*  border-radius: 0 !important;*/
+/*  !*outline: 1px solid black;*!*/
+/*  background: var(--windows-grey) !important;*/
+/*  color: var(--black) !important;*/
+/*  font-family: 'MS Sans Serif' !important;*/
+/*  font-weight: lighter !important;*/
+/*  !*box-shadow: 1px 1px 1px 1px black !important;*!*/
+/*  text-align: center !important;*/
+/*  line-height: 0.4 !important;*/
+/*  width: 150px !important;*/
+/*  font-size: 12px !important;*/
+/*}*/
+/*button:hover{*/
+/*  background: var(--selection-blue) !important;*/
+/*  color: var(--white) !important;*/
+/*}*/
+/* BUTTONS */
+
+
 .form-group label, .form-group input {
   font-family: "MS Sans Serif" !important;
-}
-.slab-body .new_note #note_text {
-  min-height: 470px !important;
 }
 .form-control {
   border-radius: 0 !important;
@@ -180,85 +211,29 @@ body {
 /* OVERLAY LOADING */
 
 /* SCROLL BAR */
-::-webkit-scrollbar {
-  width: 16px;
-}
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-grey);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-grey);
-  border-width: 2px !important;
-  border-style: solid !important;
-  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;
-  outline-width: 1px !important;
-  outline-style: solid !important;
-  outline-color: var(--black) !important;
-}
-::-webkit-scrollbar-track:hover {
-  background: var(--scrollbar-hover);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-hover-dark);
-}
+/* Pending deletion as it's non-standard https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+/*::-webkit-scrollbar {*/
+/*  width: 16px;*/
+/*}*/
+/*::-webkit-scrollbar-track {*/
+/*  background: var(--scrollbar-grey);*/
+/*}*/
+/*::-webkit-scrollbar-thumb {*/
+/*  background: var(--scrollbar-grey);*/
+/*  border-width: 2px !important;*/
+/*  border-style: solid !important;*/
+/*  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;*/
+/*  outline-width: 1px !important;*/
+/*  outline-style: solid !important;*/
+/*  outline-color: var(--black) !important;*/
+/*}*/
+/*::-webkit-scrollbar-track:hover {*/
+/*  background: var(--scrollbar-hover);*/
+/*}*/
+/*::-webkit-scrollbar-thumb:hover {*/
+/*  background: var(--scrollbar-hover-dark);*/
+/*}*/
 /* SCROLL BAR */
-
-/* BUTTONS */
-.btn {
-  border-width: 1.5px !important;
-  border-color: var(--white) var(--black) var(--black) var(--white) !important;
-  border-style: solid !important;
-  border-radius: 0 !important;
-  /* outline: 1px solid black; Also not sure this is needed */
-  background: var(--windows-grey) !important;
-  color: var(--black) !important;
-  font-family: 'MS Sans Serif' !important;
-  font-weight: lighter !important;
-  /* box-shadow: 1px 1px 1px 1px black !important; Not sure this is right */
-  text-align: center !important;
-}
-.btn-primary, .btn-ghost {
-  line-height: 0.4 !important;
-  width: 150px !important;
-  font-size: 12px !important;
-}
-.btn-xs {
-  line-height: 1.5 !important;
-}
-.btn-sm {
-  line-height: 1.2 !important;
-  width: 130px !important;
-}
-.btn:hover{ background: var(--selection-blue) !important;
- /* border-color: var(--selection-blue) !important; */
-  color: var(--white) !important;
-}
-button {
-  border-width: 1px !important;
-  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;
-  border-style: solid !important;
-  border-radius: 0 !important;
-  outline: 1px solid black;
-  background: var(--windows-grey) !important;
-  color: var(--black) !important;
-  font-family: 'MS Sans Serif' !important;
-  font-weight: lighter !important;
-  box-shadow: 1px 1px 1px 1px black !important;
-  text-align: center !important;
-  line-height: 0.4 !important;
-  width: 150px !important;
-  font-size: 12px !important;
-}
-button:hover{
-  background: var(--selection-blue) !important;
-  color: var(--white) !important;
-}
-/* slab buttons */
-.slab-options-bar .btn-sm {
-  line-height: 0.3 !important;
-  height: 22px !important;
-}
-/* BUTTONS */
 
 /* DROPDOWN MENU */
 .dropdown{
@@ -477,9 +452,7 @@ span.sub_helper_text {
   border-radius: 0 !important;
   font-family: "MS Sans Serif" !important;
 }
-.lease-list:hover {
-  background: var(--windows-grey-light) !important;
-}
+
 
 .badge, .label-resolutions, .label-communication-flag, .label-abatement {
   border-radius: 0 !important;
