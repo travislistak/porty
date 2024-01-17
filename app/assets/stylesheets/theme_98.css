@@ -8,6 +8,7 @@
   --windows-outline-dark-grey: #7F7F7F;
   --windows-outline-light-grey: #D0CCC4;
   --windows-grey-light: #f2efe9;
+  --windows-disabled: #787c80;
   --black: #000000;
   --black-light: #5c5c5c;
   --white: #ffffff;
@@ -22,12 +23,29 @@
 body {
   background: var(--desktop-blue);
   color: black;
+  opacity: 100%;
+}
+hr {
+  border-top: 2px solid var(--windows-outline-dark-grey);
+  border-bottom: 2px solid var(--white);
+}
+.container .container-fluid {
+  margin-top: 2px;
+  background: var(--windows-grey);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
+  border-radius: 0;
+  outline: 2px outset black;
 }
 
 /* Navigation */
 .navbar {
   background: var(--windows-grey) !important;
   font-family: "MS Sans Serif";
+  border-width: 1px;
+  border-style: none none solid none;
+  border-color: var(--white);
 
   .navbar-brand, .nav-link {
     color: var(--black)
@@ -71,74 +89,60 @@ body {
       width: 75%;
       margin-left: auto;
       margin-right: auto;
-      border-top-color: var(--windows-outline-dark-grey);
-      border-bottom-color: var(--white);
-      border-width: 1px 0;
-      border-style: solid none;
+      border-top: 1px solid var(--windows-outline-dark-grey);
+      border-bottom: 1px solid var(--white);
     }
   }
 }
-
-
 /* BUTTONS */
-.btn.btn-primary {
+.btn {
   background: var(--windows-grey);
-  border-width: 0 1px 1px 0;
-  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
+  border-width: 2px;
+  border-color: var(--windows-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-grey);
   border-style: solid;
   border-radius: 0;
-  outline: 1px outset black;
-  box-shadow: 0 0 0 2px black, 1px 0 0 2px black, 1px 1px 0 3px black;
+  outline: 1px outset #000000;
+  box-shadow: -1px -1px 0 1px white, 0 -1px 0 1px white, -1px 0 0 1px white;
   color: var(--black);
   margin: .75rem .50rem;
+  font-family: 'MS Sans Serif';
+  line-height: 0.95;
+  transition-duration: 0.1ms;
 
-
-  /*font-family: 'MS Sans Serif';*/
-  /*text-align: center;*/
-  /*min-width: 100px;*/
-  /*line-height: 0.6;*/
-
+  &:focus {
+    box-shadow: 0 0 0 2px black, 1px 0 0 2px black, 1px 1px 0 3px black;
+    outline: 2px dotted var(--black) !important;
+    outline-offset: -6px;
+    transition-duration: 0.1ms;
+  }
+  &:active {
+    /*--bs-btn-active-bg: var(--windows-grey);*/
+    /*--bs-btn-active-color: var(--black);*/
+    border-width: 2px;
+    --bs-btn-active-border-color: var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey);
+    /*outline: 2px dotted pink;*/
+    /*outline-offset: -7px;*/
+  }
+  &:active {
+    border-width: 2px;
+    --bs-btn-active-border-color: var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey);
+    color: darkgray;
+  }
   &:hover {
     /* Must overwrite the bootstrap hover, bootstrap default is transparent */
     /*--bs-btn-hover-border-color: var(--windows-outline-dark-grey);*/
-    border-color: var(--white) var(--windows-outline-light-grey) var(--windows-outline-light-grey) var(--white);
-    background: var(--windows-outline-dark-grey);
-    outline: 1px inset black;
-    /*color: var(--white);*/
+    /*--bs-btn-hover-bg: var(--windows-grey);*/
+    /*--bs-btn-hover-color: var(--black);*/
+    border-width: 2px;
+    border-color: var(--windows-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-grey);
+  }
+  &:disabled {
+    color: var(--windows-disabled);
+    background-color: var(--windows-grey);
+    border-color: var(--windows-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-grey);
+    opacity: 100%;
   }
 }
-/*.btn-primary, .btn-ghost {*/
-/*  line-height: 0.4 !important;*/
-/*  width: 150px !important;*/
-/*  font-size: 12px !important;*/
-/*}*/
-/*.btn-xs {*/
-/*  line-height: 1.5 !important;*/
-/*}*/
-/*.btn-sm {*/
-/*  line-height: 1.2 !important;*/
-/*  width: 130px !important;*/
-/*}*/
-/*button {*/
-/*  border-width: 1px !important;*/
-/*  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white) !important;*/
-/*  border-style: solid !important;*/
-/*  border-radius: 0 !important;*/
-/*  !*outline: 1px solid black;*!*/
-/*  background: var(--windows-grey) !important;*/
-/*  color: var(--black) !important;*/
-/*  font-family: 'MS Sans Serif' !important;*/
-/*  font-weight: lighter !important;*/
-/*  !*box-shadow: 1px 1px 1px 1px black !important;*!*/
-/*  text-align: center !important;*/
-/*  line-height: 0.4 !important;*/
-/*  width: 150px !important;*/
-/*  font-size: 12px !important;*/
-/*}*/
-/*button:hover{*/
-/*  background: var(--selection-blue) !important;*/
-/*  color: var(--white) !important;*/
-/*}*/
 /* BUTTONS */
 
 
