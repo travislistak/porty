@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  web:
+    image: ssh:porty:${BRANCH}-${TAG}
+    command: rails server -b 0.0.0.0
+    environment:
+      DEV_CONTAINER_RUN: 'true'
+      RAILS_ENV: development
+      DB_HOST: host.docker.internal
+
+      RAILS_ENV_SERVE_STATIC: 'true'
+    volumes:
+      - type: bind
+        source: ./config/environments/stand_alone_container.rb
+        target: /app/config/environments/development.rb
+      - type: bind
+        source: ./config/database.yml
+        target: /app/config/database.yml
+    ports:
+      - "443:3000"
+

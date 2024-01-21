@@ -1,0 +1,20 @@
+version: "1.0"
+services:
+  web:
+    image: hythagythgta/porty
+    command: rails server
+    environment:
+      RAILS_ENV: development
+      DB_HOST: host.docker.internal
+
+      RAILS_ENV_SERVE_STATIC: 'true'
+    volumes:
+      - type: bind
+        source: ./config/environments/stand_alone_container.rb
+        target: /app/config/environments/development.rb
+      - type: bind
+        source: ./config/database.yml
+        target: /app/config/database.yml
+    ports:
+      - "443:3000"
+
