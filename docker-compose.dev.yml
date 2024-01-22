@@ -17,5 +17,5 @@ services:
         source: ./config/database.yml
         target: /app/config/database.yml
     ports:
-      - "443:3000"
+      - "3000:3000"
 

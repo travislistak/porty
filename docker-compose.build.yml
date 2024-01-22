@@ -1,7 +1,8 @@
 version: "1.0"
 services:
   web:
-    image: hythagythgta/porty
+    platform: linux/amd64
+    image: hythagythgta/porty:${BRANCH}-${TAG}
     build:
       context: .
       args:
