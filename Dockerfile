@@ -18,6 +18,9 @@ ARG DB_HOST=host.docker.internal
 ENV DB_HOST=$DB_HOST
 RUN DOCKER_BUILD=true SECRET_KEY_BASE=dummy DB_ADAPTER=nulldb bundle exec rake assets:precompile
 
+# I have added to reduce image size
+RUN apt-get autoremove -y
+
 EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
