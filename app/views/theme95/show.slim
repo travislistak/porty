@@ -8,7 +8,11 @@
     h3 Forms
     p Forms should be created by simply using a form element with a nested h5 element for the header and form controls for elements.
   form
-    h5 Form Header
+    .window-header
+      h5.title Form Header
+      .button-container
+        .window-btn.minimize-btn
+        .window-btn.close-btn
     .mb-3
       label.form-label for='emailInput' Email
       input.form-control#emailInput type='email'
