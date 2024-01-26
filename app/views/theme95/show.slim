@@ -6,28 +6,28 @@
   hr
   .row
     h3 Forms
-  .row
-    form
-      h5 Form Header
-      .mb-3
-        label.form-label for='emailInput' Email
-        input.form-control#emailInput type='email'
-      .mb-3
-        label.form-label for='passwordInput' Password
-        input.form-control#passwordInput type='password'
-      .mb-3
-        label.form-label for='selectInput' Version
-        select.form-select#selectInput
-          option selected='true' Version 95
-          option Version 98
-          option Version XP
-      .mb-3
-        label.form-label for='disabledInput' Disabled
-        input.form-control#disabledInput type='text' disabled='true' placeholder='Disabled'
-      .mb-3.form-check
-        input.form-check-input#checkInput type='checkbox'
-        label.form-check-label for='checkInput' Receive news and offers emails?
-      button.btn type='submit' Submit
+    p Forms should be created by simply using a form element with a nested h5 element for the header and form controls for elements.
+  form
+    h5 Form Header
+    .mb-3
+      label.form-label for='emailInput' Email
+      input.form-control#emailInput type='email'
+    .mb-3
+      label.form-label for='passwordInput' Password
+      input.form-control#passwordInput type='password'
+    .mb-3
+      label.form-label for='selectInput' Version
+      select.form-select#selectInput
+        option selected='true' Version 95
+        option Version 98
+        option Version XP
+    .mb-3
+      label.form-label for='disabledInput' Disabled
+      input.form-control#disabledInput type='text' disabled='true' placeholder='Disabled'
+    .mb-3.form-check
+      input.form-check-input#checkInput type='checkbox'
+      label.form-check-label for='checkInput' Receive news and offers emails?
+    button.btn type='submit' Submit
   hr
   .row
     h3 Buttons

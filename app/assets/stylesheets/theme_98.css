@@ -143,33 +143,56 @@ form {
   border-width: 2px;
   border-style: solid;
   border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
-  border-radius: 0;
-  outline: 2px outset black;
+  /*border-radius: 0;*/
+  /*outline: 2px outset black;*/
+  padding: 0 10px;
 }
-
 .form-control {
-  border-radius: 0 !important;
-  border-width: 1px !important;
-  border-style: solid !important;
-  border-color: var(--windows-outline-dark-grey) var(--black) var(--black) var(--windows-outline-dark-grey) !important;
-  outline: none !important;
-  box-shadow: 0 0 0 !important;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--windows-outline-light-grey);
+  border-radius: 0;
+  outline: 2px inset black;
+  &:focus {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--windows-outline-light-grey);
+    outline: 2px inset black;
+    box-shadow: 0 0 0;
+  }
+}
+.form-select {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--windows-outline-light-grey);
+  border-radius: 0;
+  outline: 2px inset black;
+  &:focus {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--windows-outline-light-grey);
+    outline: 2px inset black;
+    box-shadow: 0 0 0;
+  }
+}
+.form-check-input {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--windows-outline-light-grey);
+  border-radius: 0;
+  outline: 2px inset black;
+  &:focus {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--windows-outline-light-grey);
+    outline: 2px inset black;
+    box-shadow: 0 0 0;
+  }
 }
 /* FORMS */
 
 
 
-.form-group label, .form-group input {
-  font-family: "MS Sans Serif" !important;
-}
-.form-control {
-  border-radius: 0 !important;
-  border-width: 1px !important;
-  border-style: solid !important;
-  border-color: var(--windows-outline-dark-grey) var(--black) var(--black) var(--windows-outline-dark-grey) !important;
-  outline: none !important;
-  box-shadow: 0 0 0 !important;
-}
 .panel-heading {
   height: 21px !important;
   padding-right: 3px !important;
