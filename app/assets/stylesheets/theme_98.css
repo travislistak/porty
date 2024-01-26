@@ -1,6 +1,6 @@
 :root {
   --desktop-blue: #3a6ea5;
-  --selection-blue: #002468;
+  --selection-blue: #0202a4;
   --links-blue: #0f477b;
   --windows-grey: #cec9c1;
   --windows-grey-dark: #c7c2b8;
@@ -116,12 +116,8 @@ hr {
     transition-duration: 0.1ms;
   }
   &:active {
-    /*--bs-btn-active-bg: var(--windows-grey);*/
-    /*--bs-btn-active-color: var(--black);*/
     border-width: 2px;
     --bs-btn-active-border-color: var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey);
-    /*outline: 2px dotted pink;*/
-    /*outline-offset: -7px;*/
   }
   &:active {
     border-width: 2px;
@@ -129,10 +125,6 @@ hr {
     color: darkgray;
   }
   &:hover {
-    /* Must overwrite the bootstrap hover, bootstrap default is transparent */
-    /*--bs-btn-hover-border-color: var(--windows-outline-dark-grey);*/
-    /*--bs-btn-hover-bg: var(--windows-grey);*/
-    /*--bs-btn-hover-color: var(--black);*/
     border-width: 2px;
     border-color: var(--windows-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-grey);
   }
@@ -144,6 +136,27 @@ hr {
   }
 }
 /* BUTTONS */
+
+/* FORMS */
+form {
+  background: var(--windows-grey);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
+  border-radius: 0;
+  outline: 2px outset black;
+}
+
+.form-control {
+  border-radius: 0 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: var(--windows-outline-dark-grey) var(--black) var(--black) var(--windows-outline-dark-grey) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 !important;
+}
+/* FORMS */
+
 
 
 .form-group label, .form-group input {
