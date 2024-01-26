@@ -183,7 +183,7 @@ form {
 /* FORMS */
 .window-header {
     height: 31px;
-    background: var(--selection-blue) !important;
+    background: var(--selection-blue);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -207,18 +207,44 @@ form {
     .button-container {
         display: flex;
         justify-content: flex-end;
+        gap: 4px;
         padding: 3px;
 
         .window-btn {
-            height: 26px;
-            width: 26px;
+            height: 24px;
+            width: 24px;
+            background: var(--windows-grey);
+            box-shadow: 1px 1px 0 1px black;
+            border-width: 2px;
+            border-style: solid;
+            border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
 
-            &.close-btn {
-                background: #0a58ca;
+            &.help-btn {
+                &:before {
+                    content: "\FF1F";
+                    text-align: center;
+                }
             }
 
             &.minimize-btn {
-                background: green;
+                &:before {
+                    content: "\FF3F";
+                    text-align: center;
+                }
+            }
+
+            &.maximize-btn {
+                &:before {
+                    content: "\25A1";
+                    text-align: center;
+                }
+            }
+
+            &.close-btn {
+                &:before {
+                    content: "\FF58";
+                    text-align: center;
+                }
             }
         }
 
