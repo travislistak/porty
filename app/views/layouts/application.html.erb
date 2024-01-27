@@ -11,7 +11,11 @@
   </head>
 
   <body>
-    <%= render partial: 'layouts/navigation' %>
+  <%# For devise %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= render partial: 'layouts/navigation' %>
 
     <div class="container">
       <%= yield %>
