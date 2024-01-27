@@ -162,7 +162,6 @@ code {
         opacity: 100%;
     }
 }
-
 /* BUTTONS */
 
 /* FORMS */
@@ -192,7 +191,6 @@ form {
     }
 }
 
-/* FORMS */
 .window-body {
     padding: 10px;
 }
@@ -293,9 +291,9 @@ form {
 
     }
 }
+/* FORMS */
 
 
-/* LOGIN */
 
 /* OVERLAY LOADING */
 .overlay {
@@ -485,7 +483,6 @@ form {
     background: var(--windows-grey) !important;
 }
 
-/* Dashboard, Background for filter leases form. */
 aside .form-horizontal.well.boxed-well {
     background: var(--windows-grey) !important;
     border-style: solid !important;
@@ -571,19 +568,8 @@ span.sub_helper_text {
 
 /* LEFT TABS */
 
-/* ACIMA LOGO */
-.acima-brand.navbar-brand {
-    background-image: url("chrome-extension://hdohhfjnglhfjjnhpngghenoglipgabf/images/acima98_logo.png") !important;
-}
 
-/* ACIMA LOGO */
-
-/* OTHER */
-#atlwdg-trigger {
-    display: none;
-}
-
-.lease-list {
+.dumb-name {
     background: var(--windows-grey) !important;
     border-width: 1px !important;
     border-style: solid !important;
