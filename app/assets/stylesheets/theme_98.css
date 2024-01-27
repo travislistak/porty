@@ -181,6 +181,9 @@ form {
 }
 
 /* FORMS */
+.window-body {
+    padding: 10px;
+}
 .window-header {
     height: 31px;
     background: var(--selection-blue);
@@ -192,58 +195,86 @@ form {
     .title {
         color: var(--white);
         font-weight: bolder;
-        margin: 0;
+        margin: 0 0 0 4px;
 
-        &:before {
-            display: inline-block !important;
-            height: 20px !important;
-            width: 16px !important;
-            content: "" !important;
-            background: url("chrome-extension://hdohhfjnglhfjjnhpngghenoglipgabf/images/98_system_file_icon.jpg") no-repeat 0 0 !important;
-            background-size: 95% !important;
-        }
+        /*&:before {*/
+        /*    display: inline-block !important;*/
+        /*    height: 20px !important;*/
+        /*    width: 16px !important;*/
+        /*    content: "" !important;*/
+        /*    background: url("chrome-extension://hdohhfjnglhfjjnhpngghenoglipgabf/images/98_system_file_icon.jpg") no-repeat 0 0 !important;*/
+        /*    background-size: 95% !important;*/
+        /*}*/
     }
 
     .button-container {
         display: flex;
         justify-content: flex-end;
-        gap: 4px;
-        padding: 3px;
+        gap: 6px;
+        padding: 4px;
 
-        .window-btn {
+        .btn {
             height: 24px;
             width: 24px;
             background: var(--windows-grey);
             box-shadow: 1px 1px 0 1px black;
             border-width: 2px;
             border-style: solid;
+            margin: 0;
+            --bs-btn-padding-x: 0;
             border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
+            position: relative;
+            font-weight: bolder;
 
-            &.help-btn {
+            &.disabled {
+                color: var(--windows-disabled);
+                background-color: var(--windows-grey);
+                border-color: var(--windows-grey) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--windows-grey);
+                opacity: 100%;
+            }
+
+            &.window-help-btn {
                 &:before {
                     content: "\FF1F";
-                    text-align: center;
+                    font-size: 20px;
+                    position: absolute;
+                    top: 3px;
+                    right: 0;
+                    left: 4px;
                 }
             }
 
-            &.minimize-btn {
+            &.window-minimize-btn {
                 &:before {
                     content: "\FF3F";
-                    text-align: center;
+                    font-size: 15px;
+                    position: absolute;
+                    top: 3px;
+                    right: 0;
+                    left: 0;
                 }
             }
 
-            &.maximize-btn {
+            &.window-maximize-btn {
                 &:before {
                     content: "\25A1";
-                    text-align: center;
+                    font-size: 30px;
+                    position: absolute;
+                    top: -5px;
+                    right: 0;
+                    left: 0;
                 }
             }
 
-            &.close-btn {
+            &.window-close-btn {
                 &:before {
                     content: "\FF58";
-                    text-align: center;
+                    font-size: 25px;
+                    font-weight: normal;
+                    position: absolute;
+                    top: -1px;
+                    right: -3px;
+                    bottom: -2px;
                 }
             }
         }

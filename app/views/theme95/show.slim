@@ -11,29 +11,30 @@
     .window-header
       h5.title Form Header
       .button-container
-        .window-btn.help-btn
-        .window-btn.minimize-btn
-        .window-btn.maximize-btn
-        .window-btn.close-btn
-    .mb-3
-      label.form-label for='emailInput' Email
-      input.form-control#emailInput type='email'
-    .mb-3
-      label.form-label for='passwordInput' Password
-      input.form-control#passwordInput type='password'
-    .mb-3
-      label.form-label for='selectInput' Version
-      select.form-select#selectInput
-        option selected='true' Version 95
-        option Version 98
-        option Version XP
-    .mb-3
-      label.form-label for='disabledInput' Disabled
-      input.form-control#disabledInput type='text' disabled='true' placeholder='Disabled'
-    .mb-3.form-check
-      input.form-check-input#checkInput type='checkbox'
-      label.form-check-label for='checkInput' Receive news and offers emails?
-    button.btn type='submit' Submit
+        button.btn.disabled.window-help-btn
+        button.btn.window-minimize-btn
+        button.btn.window-maximize-btn
+        button.btn.window-close-btn
+    .window-body
+      .mb-3
+        label.form-label for='emailInput' Email
+        input.form-control#emailInput type='email'
+      .mb-3
+        label.form-label for='passwordInput' Password
+        input.form-control#passwordInput type='password'
+      .mb-3
+        label.form-label for='selectInput' Version
+        select.form-select#selectInput
+          option selected='true' Version 95
+          option Version 98
+          option Version XP
+      .mb-3
+        label.form-label for='disabledInput' Disabled
+        input.form-control#disabledInput type='text' disabled='true' placeholder='Disabled'
+      .mb-3.form-check
+        input.form-check-input#checkInput type='checkbox'
+        label.form-check-label for='checkInput' Receive news and offers emails?
+      button.btn type='submit' Submit
   hr
   .row
     h3 Buttons
