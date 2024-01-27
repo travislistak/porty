@@ -33,6 +33,18 @@ hr {
     border-bottom: 2px solid var(--white);
 }
 
+pre {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
+    padding: 10px;
+}
+
+code {
+    background-color: #b3ab9fc2;
+    color: #151515;
+}
+
 .container .container-fluid {
     margin-top: 2px;
     background: var(--windows-grey);
