@@ -1,0 +1,6 @@
+= form_with model: @article do |form|
+  .field
+    = form.label :content
+    = form.rich_text_area :content
+    = form.file_field :photo
+  button.btn type='submit' Submit
