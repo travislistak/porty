@@ -2,7 +2,7 @@ FROM ruby:3.2.2-alpine as base
 
 ENV LANG C.UTF-8
 
-RUN apk update && apk add --no-cache --update build-base tzdata bash yarn ca-certificates git openssh postgresql-dev nodejs ruby-dev
+RUN apk update && apk add --no-cache --update build-base tzdata bash yarn ca-certificates git openssh postgresql-dev nodejs ruby-dev vips
 
 RUN mkdir /app
 WORKDIR /app
