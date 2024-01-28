@@ -23,7 +23,8 @@ test:
 #  database: porty_production
 
 production:
-  define: &password = <%= Rails.application.credentials[:prod_database_password] %>
+#  define: &password = <%#= Rails.application.credentials[:prod_database_password] %>
   <<: *default
   adapter: <%= ENV.fetch("DB_ADAPTER") { 'postgresql' } %>
-  url: <%= ENV.fetch("DB_ADAPTER") { 'postgresql' } %>://deploy:*password@<%= ENV.fetch("DB_HOST") {'localhost'} %>/porty_production?pool=5&reconnect=true&encoding=utf8
+#  url: <%#= ENV.fetch("DB_ADAPTER") { 'postgresql' } %>://deploy:*password@<%#= ENV.fetch("DB_HOST") {'localhost'} %>/porty_production?pool=5&reconnect=true&encoding=utf8
+  url: postgresql://deploy:<%= Rails.application.credentials[:prod_database_password] %>@<%= ENV.fetch("DB_HOST") {'localhost'} %>:5432/porty_production?pool=5&reconnect=true&encoding=utf8

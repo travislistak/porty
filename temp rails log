@@ -1,0 +1,64 @@
+via action text
+
+18:27:36 web.1  | Started POST "/rails/active_storage/direct_uploads" for 127.0.0.1 at 2024-01-27 18:27:36 -0700
+18:27:36 web.1  | Processing by ActiveStorage::DirectUploadsController#create as JSON
+18:27:36 web.1  |   Parameters: {"blob"=>{"filename"=>"is the default selection.png", "content_type"=>"image/png", "byte_size"=>14681, "checksum"=>"IFNwx5NYSNEhPSRt04dkQA=="}, "direct_upload"=>{"blob"=>{"filename"=>"is the default selection.png", "content_type"=>"image/png", "byte_size"=>14681, "checksum"=>"IFNwx5NYSNEhPSRt04dkQA=="}}}
+18:27:36 web.1  |   TRANSACTION (0.2ms)  BEGIN
+18:27:36 web.1  |   ActiveStorage::Blob Create (17.3ms)  INSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["key", "54b6e0icgn8pgxc8w7ge4l7fed1e"], ["filename", "is the default selection.png"], ["content_type", "image/png"], ["metadata", nil], ["service_name", "digitalocean"], ["byte_size", 14681], ["checksum", "IFNwx5NYSNEhPSRt04dkQA=="], ["created_at", "2024-01-28 01:27:36.492087"]]
+18:27:36 web.1  |   TRANSACTION (0.7ms)  COMMIT
+18:27:36 web.1  |   S3 Storage (1.7ms) Generated URL for file at key: 54b6e0icgn8pgxc8w7ge4l7fed1e (https://porty-production.sfo3.digitaloceanspaces.com/54b6e0icgn8pgxc8w7ge4l7fed1e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00TJZ4NDH6YCCR7M7Y%2F20240128%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20240128T012736Z&X-Amz-Expires=300&X-Amz-SignedHeaders=content-length%3Bcontent-md5%3Bcontent-type%3Bhost&X-Amz-Signature=8a9315e07b3d022b45fe0c41c08e700804e1bd0af9d0a642e5236a2f5f30fb42)
+18:27:36 web.1  | Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 24.1ms | Allocations: 9601)
+18:27:36 web.1  |
+18:27:36 web.1  |
+18:27:39 web.1  | Started POST "/articles" for 127.0.0.1 at 2024-01-27 18:27:39 -0700
+18:27:39 web.1  | Processing by ArticlesController#create as TURBO_STREAM
+18:27:39 web.1  |   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"content"=>"<div>vzzx</div>"}}
+18:27:39 web.1  |   TRANSACTION (0.2ms)  BEGIN
+18:27:39 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:27:39 web.1  |   Article Create (1.7ms)  INSERT INTO "articles" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", nil], ["created_at", "2024-01-28 01:27:39.362307"], ["updated_at", "2024-01-28 01:27:39.362307"]]
+18:27:39 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:27:39 web.1  |   ActionText::RichText Create (0.6ms)  INSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "content"], ["body", "<div>vzzx</div>"], ["record_type", "Article"], ["record_id", 4], ["created_at", "2024-01-28 01:27:39.365976"], ["updated_at", "2024-01-28 01:27:39.365976"]]
+18:27:39 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:27:39 web.1  |   ActiveStorage::Attachment Load (0.5ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3  [["record_id", 4], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+18:27:39 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:27:39 web.1  |   Article Update (0.7ms)  UPDATE "articles" SET "updated_at" = $1 WHERE "articles"."id" = $2  [["updated_at", "2024-01-28 01:27:39.368517"], ["id", 4]]
+18:27:39 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:27:39 web.1  |   TRANSACTION (0.7ms)  COMMIT
+18:27:39 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:27:39 web.1  | Redirected to http://localhost:3000/articles/4
+18:27:39 web.1  | Completed 302 Found in 15ms (ActiveRecord: 4.5ms | Allocations: 5218)
+
+
+
+
+
+
+
+Started POST "/articles" for 127.0.0.1 at 2024-01-27 18:32:00 -0700
+18:32:00 web.1  | Processing by ArticlesController#create as TURBO_STREAM
+18:32:00 web.1  |   Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"content"=>"<div>asdf</div>", "photo"=>#<ActionDispatch::Http::UploadedFile:0x000000010f3f3120 @tempfile=#<Tempfile:/var/folders/37/w9c3bj551nzfgrc0lvdbk28r0000gn/T/RackMultipart20240127-24816-r9fsom.png>, @content_type="image/png", @original_filename="button is focus.png", @headers="Content-Disposition: form-data; name=\"article[photo]\"; filename=\"button is focus.png\"\r\nContent-Type: image/png\r\n">}}
+18:32:00 web.1  |   TRANSACTION (0.3ms)  BEGIN
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   Article Create (1.6ms)  INSERT INTO "articles" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", nil], ["created_at", "2024-01-28 01:32:00.264350"], ["updated_at", "2024-01-28 01:32:00.264350"]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   ActionText::RichText Create (0.3ms)  INSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "content"], ["body", "<div>asdf</div>"], ["record_type", "Article"], ["record_id", 5], ["created_at", "2024-01-28 01:32:00.267789"], ["updated_at", "2024-01-28 01:32:00.267789"]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   ActiveStorage::Attachment Load (0.5ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3  [["record_id", 5], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   ActiveStorage::Blob Load (0.7ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4  [["record_id", 5], ["record_type", "Article"], ["name", "photo"], ["LIMIT", 1]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   ActiveStorage::Attachment Load (0.3ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4  [["record_id", 5], ["record_type", "Article"], ["name", "photo"], ["LIMIT", 1]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   ActiveStorage::Blob Create (0.4ms)  INSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["key", "p1mffh2i9rc2od8d879pdcwbo1bg"], ["filename", "button is focus.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "digitalocean"], ["byte_size", 10177], ["checksum", "Dajxuklic5i8GDbLMOoMyg=="], ["created_at", "2024-01-28 01:32:00.283479"]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   ActiveStorage::Attachment Create (0.9ms)  INSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "photo"], ["record_type", "Article"], ["record_id", 5], ["blob_id", 18], ["created_at", "2024-01-28 01:32:00.285229"]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   Article Update (0.3ms)  UPDATE "articles" SET "updated_at" = $1 WHERE "articles"."id" = $2  [["updated_at", "2024-01-28 01:32:00.287123"], ["id", 5]]
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   TRANSACTION (1.0ms)  COMMIT
+18:32:00 web.1  |   ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  |   S3 Storage (213.0ms) Uploaded file to key: p1mffh2i9rc2od8d879pdcwbo1bg (checksum: Dajxuklic5i8GDbLMOoMyg==)
+18:32:00 web.1  | [ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 228dc2ff-d011-4f61-805d-062d2da4396f) to Async(default) with arguments: #<GlobalID:0x000000010ea33dd8 @uri=#<URI::GID gid://porty/ActiveStorage::Blob/18>>
+18:32:00 web.1  | [ActiveJob] ↳ app/controllers/articles_controller.rb:14:in `create'
+18:32:00 web.1  | Redirected to http://localhost:3000/articles/5
+18:32:00 web.1  | Completed 302 Found in 287ms (ActiveRecord: 6.3ms | Allocations: 31347)
