@@ -16,7 +16,7 @@ COPY . /app
 
 ARG DB_HOST=host.docker.internal
 ENV DB_HOST=$DB_HOST
-RUN DOCKER_BUILD=true SECRET_KEY_BASE=dummy DB_ADAPTER=nulldb bundle exec rake assets:precompile
+RUN DOCKER_BUILD=true SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
 
 EXPOSE 3000
 
