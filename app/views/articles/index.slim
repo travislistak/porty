@@ -1,1 +1,6 @@
-p articles index
+= @articles.each do |article|
+  .row
+    .col-9
+      h2= article.title
+    .col-3
+      = article

@@ -22,8 +22,10 @@
             Writing
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href=<%= articles_path %>>Articles</a></li>
-            <li><a class="dropdown-item" href='#'>Offline</a></li>
+            <li><a class="dropdown-item" href=<%= articles_path(category: :opinion) %>>Articles</a></li>
+            <li><a class="dropdown-item" href=<%= articles_path(category: :offline) %>>Offline</a></li>
+            <li><a class="dropdown-item" href=<%= articles_path(category: :best_practice) %>>Best Practice</a></li>
+
           </ul>
         </li>
       </ul>

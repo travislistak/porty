@@ -1,5 +1,14 @@
-= form_with model: @article do |form|
+= form_with model: @article do |f|
+  .mb-3
+    .form-label= f.label :title
+    .form-control= f.text_field :title
+  .mb-3
+    .form-label= f.label :category
+    .form-control= f.select :article_type_id, options_for_select(::ArticleType.pluck(:category, :id))
+  .mb-3
+    .form-label= f.label :published, 'Publish?'
+    .form-control= f.select :published, options_for_select(['true', 'false'], 'false')
   .field
-    = form.label :content
-    = form.rich_text_area :content
+    = f.label :content
+    = f.rich_text_area :content
   button.btn type='submit' Submit

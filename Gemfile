@@ -12,6 +12,7 @@ gem "sprockets-rails"
 # gem "sqlite3", "~> 1.4"
 gem "pg", "~> 1.5.4"
 gem "slim"
+gem "kaminari"
 
 gem "aws-sdk-s3"#, require: false
 

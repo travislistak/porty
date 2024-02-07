@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
+    article_type = ::ArticleType.find_by(category: article_params[:category])
+    @articles = ::Article.where(article_type_id: article_type).order(:created_at).page(1).per(5)
   end
 
   def show
@@ -12,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = ::Article.create! article_params
+    article = ::Article.create! create_params
     redirect_to article
   end
 
@@ -22,14 +24,19 @@ class ArticlesController < ApplicationController
 
   def update
     @article = ::Article.find(params[:id])
-    @article.update! article_params
+    @article.update! create_params
     redirect_to @article
   end
 
   def destroy
   end
 
+  def create_params
+    # TODO Get rid of the photo param, test that is ok
+    params.require(:article).permit(:title, :content, :photo, :published, :category, :article_type_id)
+  end
+
   def article_params
-    params.require(:article).permit(:title, :content, :photo)
+    params.permit(:category)
   end
 end
