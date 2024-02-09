@@ -8,3 +8,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+.image_box {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+}

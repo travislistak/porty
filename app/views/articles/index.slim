@@ -2,5 +2,8 @@
   .row
     .col-9
       h2= article.title
-    .col-3
-      = article
+  .row
+    .col-md-9
+      .img-thumbnail.rounded.float-start= image_tag article.content.embeds.find{ |e| e.image? }.variant(resize_to_limit: [150, 150])
+      .div
+        p= rich_to_plain_without_images(article.content)
