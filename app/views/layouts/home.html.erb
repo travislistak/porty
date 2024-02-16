@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+  <head>
+    <title>Porty</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+  <%# For devise %>
+  <p class="notice d-inline m-0 p-0 position-absolute"><%= notice %></p>
+  <p class="alert d-inline m-0 p-0 position-absolute"><%= alert %></p>
+
+  <%= render partial: 'layouts/navigation' %>
+
+  <%= yield %>
+  </body>
+</html>
