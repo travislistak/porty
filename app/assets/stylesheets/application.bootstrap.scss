@@ -2,6 +2,10 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'trix/dist/trix';
 
+:root {
+  --off-white: #707070;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -9,8 +13,19 @@ html {
   box-sizing: inherit;
 }
 
-.image_box {
-  display: inline-block;
-  height: 150px;
-  width: 150px;
+.article-box {
+  margin-bottom: 1rem;
+  height: 152px;
+  .image-box {
+    margin-right: 10px;
+  }
+  .date-field {
+    color: var(--off-white);
+    font-style: italic;
+    font-weight: lighter;
+    white-space: pre;
+    &.updated {
+      font-weight: normal;
+    }
+  }
 }

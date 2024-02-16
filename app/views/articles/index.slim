@@ -1,9 +1,11 @@
-= @articles.each do |article|
-  .row
-    .col-9
-      h2= article.title
-  .row
-    .col-md-9
-      .img-thumbnail.rounded.float-start= image_tag article.content.embeds.find{ |e| e.image? }.variant(resize_to_limit: [150, 150])
-      .div
-        p= rich_to_plain_without_images(article.content)
+.pt-2
+  - @articles.each do |article|
+    .row
+      .col-md-12.article-box
+        .img-thumbnail.rounded.image-box.float-start= image_tag article.content.embeds.find{ |e| e.image? }.variant(resize_to_limit: [150, 150])
+        .article-box.d-flex.flex-column.justify-content-between
+          h2= article.title
+          p= rich_to_plain_without_images(article.content)
+          .flex-grow-1.d-flex.align-items-end
+            span.date-field= "Created: #{humanize_date(article.created_at)} "
+            span.date-field.updated= "-- Updated: #{humanize_date(article.updated_at)}"
