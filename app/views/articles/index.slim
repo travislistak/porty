@@ -8,4 +8,4 @@
           p= rich_to_plain_without_images(article.content)
           .flex-grow-1.d-flex.align-items-end
             span.date-field= "Created: #{humanize_date(article.created_at)} "
-            span.date-field.updated= "-- Updated: #{humanize_date(article.updated_at)}"
+            span.date-field.updated= "-- Updated: #{humanize_date(article.updated_at)}" if article.updated_at > article.created_at

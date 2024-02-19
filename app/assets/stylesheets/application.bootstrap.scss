@@ -1,6 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'trix/dist/trix';
+@import "articles";
+@import "home";
 
 :root {
   --off-white: #707070;
@@ -13,19 +15,6 @@ html {
   box-sizing: inherit;
 }
 
-.article-box {
-  margin-bottom: 1rem;
-  height: 152px;
-  .image-box {
-    margin-right: 10px;
-  }
-  .date-field {
-    color: var(--off-white);
-    font-style: italic;
-    font-weight: lighter;
-    white-space: pre;
-    &.updated {
-      font-weight: normal;
-    }
-  }
+.navbar {
+  border-bottom: 2px solid black;
 }

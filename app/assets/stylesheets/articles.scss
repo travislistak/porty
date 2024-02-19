@@ -1,0 +1,20 @@
+.image-box {
+  min-width: 155px;
+  height: 150px;
+}
+.article-box {
+  margin-bottom: 1rem;
+  height: 152px;
+  .image-box {
+    margin-right: 10px;
+  }
+  .date-field {
+    color: var(--off-white);
+    font-style: italic;
+    font-weight: lighter;
+    white-space: pre;
+    &.updated {
+      font-weight: normal;
+    }
+  }
+}
