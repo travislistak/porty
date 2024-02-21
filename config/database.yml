@@ -10,7 +10,7 @@ default: &default
 development:
   <<: *default
   adapter: <%= ENV.fetch("DB_ADAPTER") { 'postgresql' } %>
-  url: <%= ENV.fetch("DB_ADAPTER") { 'postgresql' } %>://pipefellow:@<%= ENV.fetch("DB_HOST") {'localhost'} %>/porty_development?pool=5&reconnect=true&encoding=utf8
+  url: <%= ENV.fetch("DB_ADAPTER") { 'postgresql' } %>://<%= `whoami`.strip %>:@<%= ENV.fetch("DB_HOST") {'localhost'} %>/porty_development?pool=5&reconnect=true&encoding=utf8
 
 test:
   <<: *default
