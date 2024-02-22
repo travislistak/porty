@@ -4,7 +4,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">s
+    <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href=<%= root_path %>>Home</a>
@@ -18,7 +18,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href=<%= root_path %>>Python</a>
+          <a class="nav-link" aria-current="page" href=<%= articles_path(category: :python) %>>Python</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href=<%= articles_path(category: :opinion) %>>Articles</a>
@@ -29,11 +29,14 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href=<%= articles_path(category: :offline) %>>Offline</a>
         </li>
-      </ul>
+        <% if user_signed_in? %>
+          <%= button_to "New Article", new_article_path, method: :get, class: "btn btn-outline-primary"  %>
+        <% end %>
+        </ul>
     </div>
     <% if user_signed_in? %>
-      <div> Welcome <%= current_user.email %> </div>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+      <div> <%= current_user.email %> </div>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger ms-2"  %>
     <% else %>
       <%= button_to "Sign in", new_user_session_path %>
     <% end %>

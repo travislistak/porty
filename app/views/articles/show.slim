@@ -1,1 +1,9 @@
+- if current_user
+  .row.justify-content-start.form-control.mt-3.mb-3
+    p Admin Controls
+    - if @article.published?
+      = button_to "Unpublish", article_path(@article, article: { published: false }), method: :put, class: 'btn btn-outline-danger'
+    - else
+      = button_to "Publish", article_path(@article, article: { published: true }), method: :put, class: 'btn btn-outline-success'
+
 = @article.content
