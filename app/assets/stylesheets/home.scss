@@ -1,5 +1,26 @@
-.page-banner {
-  height: 400px;
-  padding: 0 !important;
+.container-fluid.page-banner {
   background: var(--bs-tertiary-bg);
+  border-bottom: 2px solid var(--bs-secondary-bg);
+  height: 400px;
+  padding: 0;
+
+  .container {
+    height: 100%;
+    h1 {
+      font-size: 8rem;
+      font-weight: lighter;
+      line-height: 7.5rem;
+      margin-top: 0;
+    }
+
+    p.subtext {
+      font-size: 1.4rem;
+    }
+
+    p.subtitle {
+      font-style: italic;
+      font-size: 1.75rem;
+      margin-top: 1.5rem;
+    }
+  }
 }
