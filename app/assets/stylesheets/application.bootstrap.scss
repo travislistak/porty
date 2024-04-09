@@ -19,3 +19,7 @@ html {
 .navbar {
   border-bottom: 2px solid var(--bs-secondary-bg);
 }
+.stealth-link {
+  color: inherit;
+  text-decoration: none;
+}

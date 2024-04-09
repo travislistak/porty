@@ -34,11 +34,5 @@
         <% end %>
         </ul>
     </div>
-    <% if user_signed_in? %>
-      <div> <%= current_user.email %> </div>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger ms-2"  %>
-    <% else %>
-      <%= button_to "Sign in", new_user_session_path %>
-    <% end %>
   </div>
 </nav>
