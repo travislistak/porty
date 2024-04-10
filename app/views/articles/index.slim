@@ -1,9 +1,10 @@
-.pt-2
-  h1= @article_type.category.titleize
+.pt-2.text-center.mb-5
+  h1 Articles
+.row
   - @articles.each do |article|
-    .row
-      .col-md-12.article-box
-        .img-thumbnail.rounded.image-box.float-start= image_tag article.content.embeds.find{ |e| e.image? }.variant(resize_to_limit: [150, 150])
+      .col-md-6.article-box
+        - if article.content.embeds.present?
+          .img-thumbnail.rounded.image-box.float-start= image_tag article.content.embeds.find{ |e| e.image? }.variant(resize_to_limit: [150, 150])
         - if article.published
           span.badge.text-bg-success.publish-badge Published
         - else

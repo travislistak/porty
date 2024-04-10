@@ -6,9 +6,6 @@ h1 New Article
         = f.label :title, class: 'form-label'
         = f.text_field :title, class: 'form-control'
       .mb-3
-        = f.label :category, class: 'form-label'
-        = f.select :article_type_id, options_for_select(::ArticleType.pluck(:category, :id)), {}, class: 'form-control'
-      .mb-3
         = f.label :published, 'Publish?', class: 'form-label'
         = f.select :published, options_for_select(['true', 'false'], 'false'), {}, class: 'form-control'
   .row

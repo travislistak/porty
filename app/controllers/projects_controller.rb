@@ -1,10 +1,10 @@
-class ArticlesController < ApplicationController
+class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
     if current_user
-      @articles = ::Article.unscoped.order(:created_at).page(1).per(5)
+      @articles = ::Article.unscoped.where(article_type_id: @article_type).order(:created_at).page(1).per(5)
     else
-      @articles = ::Article.order(:created_at).page(1).per(5)
+      @articles = ::Article.where(article_type_id: @article_type).order(:created_at).page(1).per(5)
     end
   end
 
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   end
 
   def create_params
-    params.require(:article).permit(:title, :content, :published, :category)
+    params.require(:article).permit(:title, :content, :published, :category, :article_type_id)
   end
 
   def article_params

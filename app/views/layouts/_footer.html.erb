@@ -1,11 +1,16 @@
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
   <div class="container">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-      </a>
+    <div class="d-flex align-items-center justify-content-center text-center">
+      <ul class="navbar nav">
+        <li class="nav-link">
+          <a class="nav-link active" aria-current="page" href=<%= root_path %>>Home</a>
+        </li>
+        <li class="nav-link">
+          <a class="nav-link active" aria-current="page" href=<%= root_path %>>Hire Me</a>
+        </li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center justify-content-center text-center">
       <% if user_signed_in? %>
         <span class="mb-3 mb-md-0 text-muted">Travis <%= link_to "©", destroy_user_session_path, method: :delete, class: "stealth-link", data: { turbo: 'false' } %> 2024</span>
       <% else %>
