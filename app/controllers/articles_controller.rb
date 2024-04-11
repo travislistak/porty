@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = ::Article.find(params[:id])
+    @article = ::Article.unscoped.find(params[:id])
   end
 
   def update
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   end
 
   def create_params
-    params.require(:article).permit(:title, :content, :published, :category)
+    params.require(:article).permit(:title, :content, :published, :category, :header_image)
   end
 
   def article_params

@@ -3,6 +3,9 @@ h1 New Article
   .row.justify-content-center
     .col-md-6
       .mb-3
+        = f.label :header_image, class: 'form-label'
+        = f.file_field :header_image, class: 'form-control'
+      .mb-3
         = f.label :title, class: 'form-label'
         = f.text_field :title, class: 'form-control'
       .mb-3

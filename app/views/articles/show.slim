@@ -5,5 +5,7 @@
       = button_to "Unpublish", article_path(@article, article: { published: false }), method: :put, class: 'btn btn-outline-danger'
     - else
       = button_to "Publish", article_path(@article, article: { published: true }), method: :put, class: 'btn btn-outline-success'
-
+.row
+  .col-md-12.header-image-container
+    = image_tag(@article.header_image, class: 'header-image')
 = @article.content

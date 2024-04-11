@@ -1,5 +1,8 @@
 class Article < ApplicationRecord
   has_rich_text :content
-
-  default_scope{ where(published: true) }
+  has_one_attached :header_image do |attachable|
+    attachable.variant :thumbnail, resize: "100x100"
+    attachable.variant :medium, resize: ""
+  end
+  default_scope { where(published: true) }
 end
