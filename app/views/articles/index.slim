@@ -2,16 +2,17 @@
   h1 Articles
 .row
   - @articles.each do |article|
-    .col-md-6
-
     .col-md-6.article-box
-      - if article.content.embeds.present?
-        .img-thumbnail.rounded.image-box.float-start= image_tag article.content.embeds.find{ |e| e.image? }.variant(resize_to_limit: [150, 150])
-      - if article.published
-        span.badge.text-bg-success.publish-badge Published
-      - else
-        span.badge.text-bg-danger.publish-badge Unpublished
-      .article-box.d-flex.flex-column.justify-content-between
+      .index-header-image-container
+        - if article.header_image.present?
+          = image_tag(article.header_image, class: 'header-image')
+        - else
+          = image_tag("placeholder.png", class: 'header-image')
+        - if article.published
+          span.badge.text-bg-success.publish-badge Published
+        - else
+          span.badge.text-bg-danger.publish-badge Unpublished
+      .article-summary.d-flex.flex-column.justify-content-between
         = link_to article_path(article) do
           h2= article.title
         p= rich_to_plain_without_images(article.content)

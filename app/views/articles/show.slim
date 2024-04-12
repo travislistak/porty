@@ -7,5 +7,9 @@
       = button_to "Publish", article_path(@article, article: { published: true }), method: :put, class: 'btn btn-outline-success'
 .row
   .col-md-12.header-image-container
-    = image_tag(@article.header_image, class: 'header-image')
+    - if @article.header_image.present?
+      = image_tag(@article.header_image, class: 'header-image')
+    - else
+      = image_tag("placeholder.png", class: 'header-image')
+hr
 = @article.content
