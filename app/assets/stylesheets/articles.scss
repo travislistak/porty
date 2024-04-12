@@ -1,34 +1,47 @@
-
 // index
 .article-box {
   margin-bottom: 3rem;
   position: relative;
   padding: 1rem;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .index-header-image-container {
     width: 100%;
     height: 300px;
+
     img {
       border-radius: 12px;
-      width: 100%;
       height: 100%;
+      width: 100%;
       object-fit: cover;
     }
   }
+
   .publish-badge {
     position: absolute;
     left: 16px;
     font-size: 1rem;
   }
+
   .article-summary {
-      .date-field {
-        color: var(--off-white);
-        font-style: italic;
-        font-weight: lighter;
-        white-space: pre;
-        &.updated {
-          font-weight: normal;
-        }
+    .date-field {
+      color: var(--off-white);
+      font-style: italic;
+      font-weight: lighter;
+      white-space: pre;
+
+      &.updated {
+        font-weight: normal;
       }
+    }
   }
 }
 
@@ -36,6 +49,7 @@
 .header-image-container {
   height: 400px;
   display: flex;
+
   img {
     border-radius: 10px;
     width: 100%;
@@ -43,6 +57,10 @@
     object-fit: cover;
   }
 }
+.article-title {
+  font-size: 5rem;
+}
+
 //.article-box {
 //  margin-bottom: 1rem;
 //  height: 152px;
