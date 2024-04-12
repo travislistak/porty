@@ -1,11 +1,9 @@
-.container-fluid.page-banner
+.container-fluid.page-banner.light-background.mb-3
   .container.d-flex.flex-column.justify-content-center
     h1 Travis
-    p.subtext More than a developer, more than a programmer, more than an engineer;
-    p.subtitle <i>Weaver of Code</i>
+    p.subtext The Weaver of Code;
+    p.subtitle <i>Adaptable, collaborative, and dedicated</i>
 .container
-  h2 Who Am I?
-  p I have been weaving code since October of 2020.
-
-  h2 What Have I Been Up To?
-  p Recent reads: Teamtopologies
+  = render partial: "experience"
+  = render partial: "recommendations"
+  = render partial: "bio"

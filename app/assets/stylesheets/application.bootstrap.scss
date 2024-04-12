@@ -3,6 +3,7 @@
 @import 'trix/dist/trix';
 @import "articles";
 @import "home";
+@import "trix_styles";
 
 :root {
   --off-white: #707070;
@@ -17,4 +18,8 @@ html {
 
 .navbar {
   border-bottom: 2px solid var(--bs-secondary-bg);
+}
+.stealth-link {
+  color: inherit;
+  text-decoration: none;
 }
