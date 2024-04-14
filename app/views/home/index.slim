@@ -1,9 +1,9 @@
 .container-fluid.page-banner.light-background.mb-3
   .container.d-flex.flex-column.justify-content-center
-    h1 Travis
+    h1 Travis Listak
     p.subtext The Weaver of Code;
     p.subtitle <i>Adaptable, collaborative, and dedicated</i>
-.container
-  = render partial: "experience"
-  = render partial: "recommendations"
-  = render partial: "bio"
+
+= render partial: "home/experience/index"
+= render partial: "home/recommendations/index"
+= render partial: "bio"
