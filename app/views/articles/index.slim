@@ -1,4 +1,7 @@
 .pt-2.text-center.mb-5
+  - if user_signed_in?
+    .row.justify-content-start.form-control.mt-3.mb-3
+      = button_to "New Article", new_article_path, method: :get, class: "btn btn-outline-primary"
   h1 Articles
 .row
   - @articles.each do |article|
