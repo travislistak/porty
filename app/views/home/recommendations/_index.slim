@@ -1,0 +1,19 @@
+.bg-body-tertiary.text-center.py-5
+  h1.mb-3 Recommendations
+  #carouselIndicators.carousel.slide.d-flex.justify-content-center data-bs-ride="true"
+    .home-carousel-indicators.carousel-indicators
+      button.active[type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"]
+      button[type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"]
+    .home-carousel-inner.carousel-inner.pt-4
+      .carousel-item.active
+        =render partial: 'home/recommendations/show', locals: { person: 'Matthew Rampey', position: "Acima - Software Developer", summary: '"I’ve worked with Travis for a little over 3 years. Through various projects we’ve worked on, I’ve always found him to be thoughtful and decisive toward new initiatives and company objectives. He’s a strong team player and helps where is needed, whether it’s a service he’s worked on before or with a new team he’s always integrated quickly."' }
+      .carousel-item
+        =render partial: 'home/recommendations/show', locals: { person: 'Steve Ono', position: "Acima - Software Developer", summary: '"I’ve worked with Travis for 3 years and I can say without a doubt, he is an A player. He picks things up quickly, even with complex subject matter. He is also very good at researching things and tracking down information. He is someone I would definitely welcome on my team if the opportunity arose."' }
+    button.carousel-control-prev[type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev"]
+      span.carousel-control-prev-icon[aria-hidden="true"]
+      span.visually-hidden
+        | Previous
+    button.carousel-control-next[type="button" data-bs-target="#carouselIndicators" data-bs-slide="next"]
+      span.carousel-control-next-icon[aria-hidden="true"]
+      span.visually-hidden
+        | Next
