@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :projects
   get "/theme95" => "theme95#show"
+  get "/hireme" => "hire_me#index"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
