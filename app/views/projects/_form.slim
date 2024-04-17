@@ -9,6 +9,9 @@ h1 New Project
         = f.label :title, class: 'form-label'
         = f.text_field :title, class: 'form-control'
       .mb-3
+        = f.label :published, 'Override Link', class: 'form-label'
+        = f.text_field :link, class: 'form-control'
+      .mb-3
         = f.label :published, 'Publish?', class: 'form-label'
         = f.select :published, options_for_select(['true', 'false'], 'false'), {}, class: 'form-control'
   .row

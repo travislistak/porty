@@ -4,5 +4,6 @@ class Article < ApplicationRecord
     attachable.variant :thumbnail, resize: "100x100"
     attachable.variant :medium, resize: ""
   end
-  default_scope { where(published: true) }
+
+  default_scope { where(published: true).order(created_at: :desc) }
 end

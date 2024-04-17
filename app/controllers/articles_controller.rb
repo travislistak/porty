@@ -2,9 +2,9 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
     if current_user
-      @articles = ::Article.unscoped.order(:created_at).page(1).per(5)
+      @articles = ::Article.unscope(where: :published).page(1).per(5)
     else
-      @articles = ::Article.order(:created_at).page(1).per(5)
+      @articles = ::Article.page(1).per(5)
     end
   end
 

@@ -3,17 +3,17 @@ class ProjectsController < ApplicationController
 
   def index
     if current_user
-      @projects = ::Project.unscoped.order(:created_at).page(1).per(5)
+      @projects = ::Project.unscope(where: :published).page(1).per(5)
     else
-      @articles = ::Article.order(:created_at).page(1).per(5)
+      @articles = ::Project.order(:created_at).page(1).per(5)
     end
   end
 
   def show
     if current_user
-      @project = ::Project.unscoped.find(params[:id])
+      @project = ::Project.unscope(where: :published).find(params[:id])
     else
-      @project = ::Project.find(params[:id])
+      @project = ::Project.unscope(where: :link).find(params[:id])
     end
   end
 
@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = ::Project.find(params[:id])
+    @project = ::Project.unscoped.find(params[:id])
   end
 
   def update
@@ -40,6 +40,6 @@ class ProjectsController < ApplicationController
   end
 
   def create_params
-    params.require(:project).permit(:title, :content, :published, :category, :article_type_id)
+    params.require(:project).permit(:title, :content, :published, :header_image, :link)
   end
 end

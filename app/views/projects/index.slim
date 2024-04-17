@@ -4,21 +4,22 @@
       = button_to "New Project", new_project_path, method: :get, class: "btn btn-outline-primary"
   h1 Projects
 .row
-  - @projects.each do |article|
+  - @projects.each do |project|
+    - link = project.link? ? project.link : project_path(project)
     .col-md-6.article-box
-      = link_to article_path(article) do
+      = link_to link do
         .index-header-image-container
-          - if article.header_image.present?
-            = image_tag(article.header_image, class: 'header-image')
+          - if project.header_image.present?
+            = image_tag(project.header_image, class: 'header-image')
           - else
             = image_tag("placeholder.png", class: 'header-image')
-          - if article.published
+          - if project.published
             span.badge.text-bg-success.publish-badge Published
           - else
             span.badge.text-bg-danger.publish-badge Unpublished
         .article-summary.d-flex.flex-column.justify-content-between
-          h2.title= article.title
-          p= rich_to_plain_without_images(article.content)
+          h2.title= project.title
+          p= rich_to_plain_without_images(project.content)
           .flex-grow-1.d-flex.align-items-end
-            span.date-field= "Created: #{humanize_date(article.created_at)} "
-            span.date-field.updated= "-- Updated: #{humanize_date(article.updated_at)}" if article.updated_at > article.created_at
+            span.date-field= "Created: #{humanize_date(project.created_at)} "
+            span.date-field.updated= "-- Updated: #{humanize_date(project.updated_at)}" if project.updated_at > project.created_at
