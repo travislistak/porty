@@ -1,48 +1,45 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+
   def index
     if current_user
-      @articles = ::Article.unscoped.where(article_type_id: @article_type).order(:created_at).page(1).per(5)
+      @projects = ::Project.unscope(where: :published).page(1).per(5)
     else
-      @articles = ::Article.where(article_type_id: @article_type).order(:created_at).page(1).per(5)
+      @articles = ::Project.order(:created_at).page(1).per(5)
     end
   end
 
   def show
     if current_user
-      @article = ::Article.unscoped.find(params[:id])
+      @project = ::Project.unscope(where: :published).find(params[:id])
     else
-      @article = ::Article.find(params[:id])
+      @project = ::Project.unscope(where: :link).find(params[:id])
     end
   end
 
   def new
-    @article = ::Article.new
+    @project = ::Project.new
   end
 
   def create
-    article = ::Article.create! create_params
-    redirect_to article
+    project = ::Project.create! create_params
+    redirect_to project
   end
 
   def edit
-    @article = ::Article.find(params[:id])
+    @project = ::Project.unscoped.find(params[:id])
   end
 
   def update
-    @article = ::Article.unscoped.find(params[:id])
-    @article.update! create_params
-    redirect_to @article
+    @project = ::Project.unscoped.find(params[:id])
+    @project.update! create_params
+    redirect_to @project
   end
 
   def destroy
   end
 
   def create_params
-    params.require(:article).permit(:title, :content, :published, :category, :article_type_id)
-  end
-
-  def article_params
-    params.permit(:category)
+    params.require(:project).permit(:title, :content, :published, :header_image, :link)
   end
 end
