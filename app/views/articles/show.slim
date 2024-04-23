@@ -1,9 +1,13 @@
 - if user_signed_in?
-  .row.justify-content-start.form-control.mt-3.mb-3
-    - if @article.published?
-      = button_to "Unpublish", article_path(@article, article: { published: false }), method: :put, class: 'btn btn-outline-danger'
-    - else
-      = button_to "Publish", article_path(@article, article: { published: true }), method: :put, class: 'btn btn-outline-success'
+  .row.mt-3.mb-3
+    .col-12
+      .d-flex.flex-row.justify-content-start.admin-button-container
+        - if @article.published?
+          = button_to "Unpublish", article_path(@article, article: { published: false }), method: :put, class: 'btn btn-outline-danger'
+        - else
+          = button_to "Publish", article_path(@article, article: { published: true }), method: :put, class: 'btn btn-outline-success'
+        = button_to "Edit", edit_article_path(@article), method: :get, class: 'btn btn-outline-primary ms-2'
+        = button_to "Delete", article_path(@article), method: :delete, class: 'btn btn-outline-danger', form_class: 'ms-auto'
 .row.mb-5
   .header-image-container.col-md-12
     - if @article.header_image.present?
