@@ -1,0 +1,17 @@
+- if user_signed_in?
+  .row.justify-content-start.form-control.mt-3.mb-3
+    - if @offline.published?
+      = button_to "Unpublish", offline_path(@offline, offline: { published: false }), method: :put, class: 'btn btn-outline-danger'
+    - else
+      = button_to "Publish", offline_path(@offline, offline: { published: true }), method: :put, class: 'btn btn-outline-success'
+.row.mb-5
+  .header-image-container.col-md-12
+    - if @offline.header_image.present?
+      = image_tag(@offline.header_image, class: 'header-image')
+    - else
+      = image_tag("placeholder.png", class: 'header-image')
+.row
+  .text-center
+    h1.offline-title.mb-5= @offline.title
+  hr
+  = @offline.content

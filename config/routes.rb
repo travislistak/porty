@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "home#index"
   resources :articles
   resources :projects
+  resources :offlines
   get "/theme95" => "theme95#show"
   get "/hireme" => "hire_me#index"
 
