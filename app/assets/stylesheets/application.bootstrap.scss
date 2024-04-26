@@ -1,4 +1,5 @@
 // Bootstrap map overrides such as $primary must go here
+$primary: #024225;
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import "forest-ooze";
@@ -23,7 +24,10 @@ html {
 }
 
 .navbar {
-  border-bottom: 2px solid var(--bs-secondary-bg);
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  width: 100%;
+  color: white; // THIS IS TEMPORARY
 }
 .stealth-link {
   color: inherit;

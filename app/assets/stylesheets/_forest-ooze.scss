@@ -3,11 +3,12 @@
   --green-ooze-tertiary: #024d2b;
   --green-ooze-tertiary-rgb: rgb(0, 46, 25);
   --dark-green-ooze: #002e19;
+  --black-ooze: #0f1211;
 }
 
 [data-bs-theme="dark-ooze"] {
   --bs-body-color: var(--bs-white);
-  --bs-body-bg: var(--green-ooze);
+  --bs-body-bg: var(--black-ooze);
   --bs-tertiary-bg: var(--green-ooze-tertiary);
   --bs-tertiary-bg-rgb: var(--green-ooze-tertiary-rgb);
 
