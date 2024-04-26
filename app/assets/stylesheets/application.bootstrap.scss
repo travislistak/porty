@@ -1,5 +1,10 @@
+// Bootstrap map overrides such as $primary must go here
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import "forest-ooze";
+
+
+
 @import 'trix/dist/trix';
 @import "home";
 @import "footer";
