@@ -4,8 +4,6 @@ $primary: #024225;
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import "forest-ooze";
 
-
-
 @import 'trix/dist/trix';
 @import "home";
 @import "footer";
@@ -23,11 +21,16 @@ html {
   box-sizing: inherit;
 }
 
+
 .navbar {
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
   width: 100%;
-  color: white; // THIS IS TEMPORARY
+  .nav-link {
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+  }
 }
 .stealth-link {
   color: inherit;
