@@ -17,31 +17,47 @@ $primary: #024225;
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-.content-box {
-  background-color: var(--black-ooze);
-  border-radius: 15px;
-  box-shadow: 0 0 30px 2px var(--super-dark-green-ooze);
-  padding: 30px;
-}
-.content-box-full-width {
-  border-radius: 0;
-}
+.inpage-nav {
+  list-style-type: none;
 
+  .nav-item {
+    font-weight: bold;
+    margin: 4px 0;
+    font-size: 1.2rem;
+    transition: transform .2s;
+
+    a {
+      color: var(--bs-body-color);
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
 
 .navbar {
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
   width: 100%;
+
   .nav-link {
     color: white;
     font-weight: bold;
     margin-left: 15px;
   }
 }
+
 .stealth-link {
   color: inherit;
   text-decoration: none;

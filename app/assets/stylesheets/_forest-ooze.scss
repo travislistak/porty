@@ -6,6 +6,7 @@
   --dark-green-ooze: #002e19;
   --super-dark-green-ooze: #011810;
   --black-ooze: #0f1211;
+  --dark-black-ooze: #080a09;
 }
 
 [data-bs-theme="dark-ooze"] {
@@ -16,6 +17,6 @@
   --bs-secondary-color: var(--green-ooze-secondary);
 
   .gradient-background {
-    background: linear-gradient(189deg, var(--dark-green-ooze) 0%, var(--green-ooze-tertiary) 100%);
+    background: linear-gradient(189deg, var(--dark-black-ooze) 0%, var(--super-dark-green-ooze) 100%);
   }
 }
