@@ -21,6 +21,16 @@ html {
   box-sizing: inherit;
 }
 
+.content-box {
+  background-color: var(--black-ooze);
+  border-radius: 15px;
+  box-shadow: 0 0 30px 2px var(--super-dark-green-ooze);
+  padding: 30px;
+}
+.content-box-full-width {
+  border-radius: 0;
+}
+
 
 .navbar {
   background-color: rgba(0, 0, 0, 0);
