@@ -47,7 +47,7 @@ html {
 }
 
 .navbar {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   position: absolute;
   width: 100%;
 
@@ -61,4 +61,13 @@ html {
 .stealth-link {
   color: inherit;
   text-decoration: none;
+}
+
+// small 576
+// medium 768
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    position: static;
+  }
 }
