@@ -1,16 +1,19 @@
 .container-fluid.gradient-background.page-banner.mb-3
   .container
     .row.justify-content-center.h-100
-      .col-md-6.align-self-center.text-center
+      .col-md-6.title-column.text-center
         h1 Travis Listak
         p.subtitle <i>Meticulous, Adaptable, and Collaborative</i>
-      .col-md-2.align-self-center.text-start
+      .col-md-2.inpage-nav-column.text-start
         ul.inpage-nav
           li.nav-item
             a href="#experience" Experience
-          li.nav-item Recommendations
-          li.nav-item Biography
-          li.nav-item Latest Updates
+          li.nav-item
+            a href="#recommendations" Recommendations
+          li.nav-item
+            a href="#biography" Biography
+          li.nav-item
+            a href="#latest" Latest
 .btn.btn-primary Hello There
 = render partial: "home/experience/index"
 = render partial: "home/recommendations/index"
