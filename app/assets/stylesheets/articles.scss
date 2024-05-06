@@ -46,6 +46,11 @@
 }
 
 // show
+.admin-button-container {
+  padding: 10px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+}
 .header-image-container {
   height: 400px;
   display: flex;
@@ -60,12 +65,3 @@
 .article-title {
   font-size: 5rem;
 }
-
-//.article-box {
-//  margin-bottom: 1rem;
-//  height: 152px;
-//  .image-box {
-//    margin-right: 10px;
-//  }
-
-//}

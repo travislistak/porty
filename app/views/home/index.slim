@@ -1,10 +1,25 @@
-.container-fluid.page-banner.light-background.mb-3
-  .container.d-flex.flex-column.justify-content-center
-    h1 Travis Listak
-    / p.subtext The Weaver of Code;
-    p.subtitle <i>Meticulous, Adaptable, and Collaborative</i>
-
+.container-fluid.gradient-background.page-banner.mb-3
+  .container
+    .row.justify-content-center.h-100
+      .col-md-6.title-column.text-center
+        h1 Travis Listak
+        p.subtitle <i>Meticulous, Adaptable, and Collaborative</i>
+      .col-md-2.inpage-nav-column.text-start
+        ul.inpage-nav
+          li.nav-item.nav-item-1
+            a href="#experience"
+              span Experience
+          li.nav-item.nav-item-2
+            a href="#recommendations"
+              span Recommendations
+          li.nav-item.nav-item-3
+            a href="#latest"
+              span Latest
+          li.nav-item.nav-item-4
+            a href="#personal"
+              span Personal
+.btn.btn-primary Hello There
 = render partial: "home/experience/index"
 = render partial: "home/recommendations/index"
-= render partial: "bio"
 = render partial: "latest_updates"
+= render partial: "personal"
