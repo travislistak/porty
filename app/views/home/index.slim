@@ -7,15 +7,19 @@
       .col-md-2.inpage-nav-column.text-start
         ul.inpage-nav
           li.nav-item.nav-item-1
-            a href="#experience"  Experience
+            a href="#experience"
+              span Experience
           li.nav-item.nav-item-2
-            a href="#recommendations" Recommendations
+            a href="#recommendations"
+              span Recommendations
           li.nav-item.nav-item-3
-            a href="#biography" Biography
+            a href="#latest"
+              span Latest
           li.nav-item.nav-item-4
-            a href="#latest" Latest
+            a href="#personal"
+              span Personal
 .btn.btn-primary Hello There
 = render partial: "home/experience/index"
 = render partial: "home/recommendations/index"
-= render partial: "bio"
 = render partial: "latest_updates"
+= render partial: "personal"
