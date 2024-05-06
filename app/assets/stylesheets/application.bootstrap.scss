@@ -30,6 +30,7 @@ html {
 
 .inpage-nav-column {
   align-self: center;
+  overflow: hidden;
 
   .inpage-nav {
     animation: 1.6s ease-in 0s 1 backwards fadeBorder;
@@ -154,6 +155,7 @@ html {
     align-self: start;
 
     .inpage-nav {
+      // Prevent the left border from showing
       animation: 0s ease-in 0s 0 backwards fadeBorder;
 
       border-left: none;
