@@ -24,12 +24,17 @@ html {
   box-sizing: inherit;
 }
 
+h1 {
+  scroll-margin-top: 0;
+}
+
 .title-column {
   align-self: center;
 }
 
 .inpage-nav-column {
   align-self: center;
+  overflow: hidden;
 
   .inpage-nav {
     animation: 1.6s ease-in 0s 1 backwards fadeBorder;
@@ -82,10 +87,30 @@ html {
   position: absolute;
   width: 100%;
 
+  .navbar-brand {
+    color: var(--bs-body-color);
+    font-size: 1.3rem;
+    font-weight: lighter;
+
+    .brand-image {
+      border-radius: 50%;
+      height: 30px;
+      margin-right: -4px;
+      margin-top: -5px;
+      width: 30px;
+    }
+  }
+
   .nav-link {
     color: white;
     font-weight: bold;
     margin-left: 15px;
+  }
+
+  .navbar-toggler {
+    &:focus {
+      box-shadow: none;
+    }
   }
 }
 
@@ -99,38 +124,45 @@ html {
 }
 
 @keyframes fadeFromLeft {
-  0% {
+  from {
     transform: translateX(-100%);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
 @keyframes fadeFromRight {
-  0% {
+  from {
     transform: translateX(+200%);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
 @keyframes fadeBorder {
-  0% {
+  from {
     border-left: 2px solid rgba(255, 255, 255, 0);
   }
-  100% {
+  to {
     border-left: 2px solid rgba(255, 255, 255, 100);
   }
 }
 
 // small 576
 // medium 768
+
+@media only screen and (max-width: 576px) {
+  .navbar {
+    background: var(--opposite-gradient);
+    position: static;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .title-column {
@@ -141,14 +173,17 @@ html {
     align-self: start;
 
     .inpage-nav {
+      // Prevent the left border from showing
+      animation: 0s ease-in 0s 0 backwards fadeBorder;
+
       border-left: none;
-      border-top: 2px solid white;
+      border-top: 1px solid white;
       margin-left: 0;
       padding: 0;
       text-align: center;
 
       .nav-item {
-        font-size: 1.50rem;
+        font-size: 1.25rem;
         margin: 16px 0;
       }
     }
