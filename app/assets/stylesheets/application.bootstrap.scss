@@ -34,7 +34,6 @@ h1 {
 
 .inpage-nav-column {
   align-self: center;
-  overflow: hidden;
 
   .inpage-nav {
     animation: 1.6s ease-in 0s 1 backwards fadeBorder;
@@ -171,6 +170,7 @@ h1 {
 
   .inpage-nav-column {
     align-self: start;
+    overflow: hidden;
 
     .inpage-nav {
       // Prevent the left border from showing
