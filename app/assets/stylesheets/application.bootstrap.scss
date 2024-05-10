@@ -5,6 +5,7 @@ $primary: #024225;
 @import "themes/forest-ooze";
 
 @import 'trix/dist/trix';
+@import "navigation";
 @import "home";
 @import "footer";
 @import "articles";
@@ -28,90 +29,12 @@ h1 {
   scroll-margin-top: 0;
 }
 
+.vh-100 {
+  height: 100vh;
+}
+
 .title-column {
   align-self: center;
-}
-
-.inpage-nav-column {
-  align-self: center;
-  overflow: hidden;
-
-  .inpage-nav {
-    animation: 1.6s ease-in 0s 1 backwards fadeBorder;
-
-    border-left: 2px solid white;
-    list-style-type: none;
-
-    .nav-item {
-      font-weight: bold;
-      margin: 4px 0;
-      font-size: 1.2rem;
-      transition: transform .2s;
-
-      a {
-        color: var(--bs-body-color);
-        text-decoration: none;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-
-    .nav-item-1 {
-      // duration | timing function | delay | iterations | fill mode | name
-      animation: 1s ease-in-out 0s 1 backwards fadeFromRight;
-    }
-
-    .nav-item-2 {
-      animation: 1s ease-in-out 0.2s 1 backwards fadeFromRight;
-    }
-
-    .nav-item-3 {
-      animation: 1s ease-in-out 0.4s 1 backwards fadeFromRight;
-    }
-
-    .nav-item-4 {
-      animation: 1s ease-in-out 0.6s 1 backwards fadeFromRight;
-    }
-  }
-}
-
-
-.navbar {
-  background-color: transparent;
-  position: absolute;
-  width: 100%;
-
-  .navbar-brand {
-    color: var(--bs-body-color);
-    font-size: 1.3rem;
-    font-weight: lighter;
-
-    .brand-image {
-      border-radius: 50%;
-      height: 30px;
-      margin-right: -4px;
-      margin-top: -5px;
-      width: 30px;
-    }
-  }
-
-  .nav-link {
-    color: white;
-    font-weight: bold;
-    margin-left: 15px;
-  }
-
-  .navbar-toggler {
-    &:focus {
-      box-shadow: none;
-    }
-  }
 }
 
 .title-column {

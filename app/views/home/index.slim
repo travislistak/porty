@@ -1,4 +1,4 @@
-.container-fluid.gradient-background.page-banner.mb-3
+.container-fluid.gradient-background.page-banner.vh-100.mb-3
   .container
     .row.justify-content-center.h-100
       .col-md-6.title-column.text-center
@@ -13,13 +13,13 @@
             a href="#recommendations"
               span Recommendations
           li.nav-item.nav-item-3
-            a href="#latest"
-              span Latest
+            a href="#projects"
+              span Projects
           li.nav-item.nav-item-4
             a href="#personal"
               span Personal
 .btn.btn-primary Hello There
 = render partial: "home/experience/index"
 = render partial: "home/recommendations/index"
-= render partial: "latest_updates"
+= render partial: "projects", locals: { projects: @projects }
 = render partial: "personal"
