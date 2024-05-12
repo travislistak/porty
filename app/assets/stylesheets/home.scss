@@ -7,6 +7,7 @@
 
   .container {
     height: 100%;
+
     h1 {
       font-size: 8rem;
       font-weight: lighter;
@@ -26,6 +27,21 @@
   }
 }
 
-.project-box {
+.project-row {
+  height: 33.33%;
+  position: relative;
+  padding: 3rem 0;
 
+  img {
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .publish-badge {
+    position: absolute;
+    left: 12px;
+    font-size: 1rem;
+  }
 }
