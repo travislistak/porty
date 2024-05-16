@@ -1,10 +1,10 @@
 .container-fluid.gradient-background.page-banner.vh-100.mb-3
   .container
-    .row.justify-content-center.h-100
+    .row.justify-content-end.h-100
       .col-md-6.title-column.text-center
         h1 Travis Listak
         p.subtitle <i>Meticulous, Adaptable, and Collaborative</i>
-      .col-md-2.inpage-nav-column.text-start
+      .col-md-4.inpage-nav-column.text-start
         ul.inpage-nav
           li.nav-item.nav-item-1
             a href="#experience"
@@ -18,8 +18,8 @@
           li.nav-item.nav-item-4
             a href="#personal"
               span Personal
-.btn.btn-primary Hello There
-= render partial: "home/experience/index"
-= render partial: "home/recommendations/index"
-= render partial: "projects", locals: { projects: @projects }
-= render partial: "personal"
+.container.page-container
+  = render partial: "home/experience/index"
+  = render partial: "home/recommendations/index"
+  = render partial: "projects", locals: { projects: @projects }
+  = render partial: "personal"
