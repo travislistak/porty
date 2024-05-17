@@ -1,4 +1,4 @@
-.container-fluid.gradient-background.page-banner.vh-100.mb-3
+.container-fluid.gradient-background.page-banner.vh-100
   .container
     .row.justify-content-end.h-100
       .col-md-6.title-column.text-center
@@ -18,8 +18,7 @@
           li.nav-item.nav-item-4
             a href="#personal"
               span Personal
-.container.page-container
-  = render partial: "home/experience/index"
-  = render partial: "home/recommendations/index"
-  = render partial: "projects", locals: { projects: @projects }
-  = render partial: "personal"
+= render partial: "home/experience/index"
+= render partial: "home/recommendations/index"
+= render partial: "projects", locals: { projects: @projects }
+= render partial: "personal"

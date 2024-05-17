@@ -24,4 +24,8 @@
   .gradient-background {
     background: linear-gradient(190deg, var(--dark-black-ooze) 0%, var(--super-dark-green-ooze) 100%);
   }
+
+  .gradient-background-1 {
+    background: linear-gradient(-190deg, var(--super-dark-green-ooze) 0%, var(--dark-black-ooze) 100%);
+  }
 }
