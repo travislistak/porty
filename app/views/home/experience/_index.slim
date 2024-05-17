@@ -2,14 +2,9 @@
   .row.py-3.vh-100#experience
     .col-md-6.align-content-center.text-start
       h1.mx-4 I have years of <b> Experience </b> working with Ruby on Rails in a continuous deploy environment.
-    .col-md-6
+    .col-md-6.align-content-center
       .text-center
-      = render partial: "home/experience/show", locals: { \
-              title: "Software Engineer",
-              company: "Acima",
-              date: "Sep 2020 - Current",
-              description: "Worked on project that netted the company $3 million in 6 months (LOOK UP ACTUAL FIGURE) for OPE. ",
-      }
+      = render partial: "home/experience/software_engineer"
       = render partial: "home/experience/show", locals: { \
               title: "Application Support",
               company: "Acima",
