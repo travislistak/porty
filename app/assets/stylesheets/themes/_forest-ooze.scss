@@ -3,15 +3,18 @@
   --green-ooze-secondary: #2c4639;
   --green-ooze-tertiary: #002e19;
   --green-ooze-tertiary-rgb: rgb(0, 46, 25);
+  --light-green-ooze: #3e5049;
   --dark-green-ooze: #002e19;
   --super-dark-green-ooze: #011810;
-  --black-ooze: #121c1a;
+  --black-ooze: #0a1110;
   --dark-black-ooze: #080a09;
 }
 
 [data-bs-theme="dark-ooze"] {
   --bs-body-color: var(--bs-white);
-  --bs-body-bg: var(--black-ooze);
+  --bs-body-bg: var(--dark-black-ooze);
+  --bs-secondary-bg: var(--black-ooze);
+  --bs-border-color: var(--light-green-ooze);
   --bs-tertiary-bg: var(--green-ooze-tertiary);
   --bs-tertiary-bg-rgb: var(--green-ooze-tertiary-rgb);
   --bs-secondary-color: var(--green-ooze-secondary);
@@ -20,5 +23,17 @@
 
   .gradient-background {
     background: linear-gradient(190deg, var(--dark-black-ooze) 0%, var(--super-dark-green-ooze) 100%);
+  }
+
+  .gradient-background-1 {
+    background: linear-gradient(160deg, var(--super-dark-green-ooze) 0%, var(--dark-black-ooze) 100%); // -190
+  }
+
+  .gradient-background-2 { // 2
+    background: linear-gradient(-177deg, rgba(255, 0, 0, 0), var(--super-dark-green-ooze), var(--dark-black-ooze));
+  }
+
+  .gradient-background-3 { // 3
+    background: linear-gradient(177deg, var(--dark-black-ooze) 21%, var(--super-dark-green-ooze) 71%, var(--dark-black-ooze) 97%);
   }
 }

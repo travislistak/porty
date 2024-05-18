@@ -1,0 +1,23 @@
+.container-fluid.gradient-background-3.pb-10
+  .container.background-transparent
+    .row.py-3#projects
+      .col-xl-4.align-content-center.text-start
+        h1.mx-4 Web Development is More Than Work, It's a <b>Passion</b>
+      .col-xl-8
+        - projects.each do |project|
+          - link = project.link? ? project.link : project_path(project)
+          .row.project-row
+            .col-lg-4.image-container
+              = link_to link do
+                - if project.header_image.present?
+                  = image_tag(project.header_image, class: 'header-image')
+                - else
+                  = image_tag("placeholder.png", class: 'header-image')
+                - if project.published
+                  span.badge.text-bg-success.publish-badge Published
+                - else
+                  span.badge.text-bg-danger.publish-badge Unpublished
+            .col-lg-8
+              = link_to link do
+                h2.title= project.title
+              p= rich_to_plain_without_images(project.content)

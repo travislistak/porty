@@ -5,5 +5,5 @@ class Project < ApplicationRecord
     attachable.variant :medium, resize: ""
   end
 
-  default_scope{ where(published: true).order(created_at: :desc) }
+  default_scope{ where(published: true).order(created_at: :asc) }
 end

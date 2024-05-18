@@ -3,11 +3,11 @@
 }
 
 .container-fluid.page-banner {
-  height: 100vh;
   padding: 0;
 
   .container {
     height: 100%;
+
     h1 {
       font-size: 8rem;
       font-weight: lighter;
@@ -24,5 +24,41 @@
       font-size: 1.75rem;
       margin-top: 1.5rem;
     }
+  }
+}
+
+.background-transparent {
+  background-color: transparent;
+}
+
+.project-row {
+  height: 33.33%;
+  position: relative;
+  padding: 3rem 0;
+
+  .image-container {
+    padding: 0;
+    transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  img {
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  a {
+    color: var(--bs-body-color);
+  }
+
+  .publish-badge {
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
   }
 }

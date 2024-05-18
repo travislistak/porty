@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :projects
   resources :offlines
-  get "/theme95" => "theme95#show"
+  get "/theme98" => "theme98#show"
   get "/hireme" => "hire_me#index"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
