@@ -1,13 +1,9 @@
 .container-fluid.gradient-background-1
-  .row.py-3.vh-100#experience
-    .col-md-6.align-content-center.text-start
-      h1.mx-4 I have years of <b> Experience </b> working with Ruby on Rails in a continuous deploy environment.
-    .col-md-6.align-content-center
-      .text-center
-      = render partial: "home/experience/software_engineer"
-      = render partial: "home/experience/show", locals: { \
-              title: "Application Support",
-              company: "Acima",
-              date: "Mar 2019 - Sep 2020",
-              description: "As a Application Support at Acima I     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      }
+  .container.background-transparent
+    .row.py-3.vh-100#experience
+      .col-md-6.align-content-center.text-start
+        h1.mx-4 I have years of <b>Experience</b> working with Ruby on Rails in a continuous deploy environment.
+      .col-md-6.align-content-center
+        .text-center
+        = render partial: "home/experience/software_engineer"
+        = render partial: "home/experience/application_support"
