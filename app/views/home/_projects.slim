@@ -10,9 +10,9 @@
             .col-lg-4.image-container
               = link_to link do
                 - if project.header_image.present?
-                  = image_tag(project.header_image, class: 'header-image')
+                  = image_tag(project.header_image)
                 - else
-                  = image_tag("placeholder.png", class: 'header-image')
+                  = image_tag("placeholder.png")
                 - if project.published
                   span.badge.text-bg-success.publish-badge Published
                 - else

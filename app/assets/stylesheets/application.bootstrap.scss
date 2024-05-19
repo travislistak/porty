@@ -25,10 +25,6 @@ html {
   box-sizing: inherit;
 }
 
-h1 {
-  scroll-margin-top: 0;
-}
-
 .vh-100 {
   height: 100vh;
 }
@@ -41,6 +37,10 @@ h1 {
 .title-2 {
   font-size: 4rem;
   font-weight: lighter;
+}
+
+.background-transparent {
+  background-color: transparent;
 }
 
 .title-column {
@@ -89,7 +89,6 @@ h1 {
 
 // small 576
 // medium 768
-
 @media only screen and (max-width: 576px) {
   .navbar {
     background: var(--opposite-gradient);
