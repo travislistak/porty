@@ -33,6 +33,10 @@
     background-color: var(--super-dark-green-ooze);
   }
 
+  .bs-body-background {
+    background-color: var(--bs-body-bg);
+  }
+
   .gradient-background-2 {
     background: linear-gradient(190deg, var(--dark-black-ooze) 0%, var(--super-dark-green-ooze) 90%);
   }

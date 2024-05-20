@@ -1,8 +1,8 @@
-.container-fluid.gradient-background-2.px-5
+.container-fluid.gradient-background-2.py-5
   .container.background-transparent
-    .row.py-3#projects
+    .row
       .col-xl-4.align-content-center.text-start
-        h1.title-2.mx-4 Web Development is More Than Work, It's a <b>Passion</b>
+        h1.title-2.mx-4#projects Web Development is More Than Work, It's a <b>Passion</b>
       .col-xl-8
         - projects.each do |project|
           - link = project.link? ? project.link : project_path(project)
