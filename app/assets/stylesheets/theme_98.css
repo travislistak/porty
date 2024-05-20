@@ -19,6 +19,10 @@
     --scrollbar-grey: #d4d0c8;
     --scrollbar-hover: #ebe6dd;
     --scrollbar-hover-dark: #bdb8af;
+    /* Bootstrap theme overrides, overrides dark theme or any custom theme */
+    --bs-body-bg: white;
+    --bs-secondary-bg: white;
+    --bs-secondary-color: black;
 }
 
 body {
@@ -46,22 +50,23 @@ code {
 }
 
 .container .container-fluid {
-    margin-top: 2px;
     background: var(--windows-grey);
     border-width: 2px;
     border-style: solid;
     border-color: var(--white) var(--windows-outline-dark-grey) var(--windows-outline-dark-grey) var(--white);
     border-radius: 0;
+    margin: 6px 0;
     outline: 2px outset black;
 }
 
 /* Navigation */
 .navbar {
     background: var(--windows-grey) !important;
-    font-family: "MS Sans Serif";
     border-width: 1px;
     border-style: none none solid none;
     border-color: var(--white);
+    font-family: "MS Sans Serif";
+    position: static; /* override since my site uses an absolute navbar */
 
     .navbar-brand, .nav-link {
         color: var(--black)

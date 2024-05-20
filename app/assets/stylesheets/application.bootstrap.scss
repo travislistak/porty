@@ -39,8 +39,17 @@ html {
   font-weight: lighter;
 }
 
+.title-3 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
 .background-transparent {
   background-color: transparent;
+}
+
+.box-shadow {
+  filter: drop-shadow(7px 7px 6px #000)
 }
 
 .title-column {
