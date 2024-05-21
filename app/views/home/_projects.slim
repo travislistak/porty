@@ -2,7 +2,7 @@
   .container.background-transparent
     .row
       .col-xl-5.align-content-center.text-start
-        h1.title-2.mx-4#projects Web Development is More Than Work, It's a <b>Passion</b>
+        h1.title-2.mx-4#projects Web Dev is More Than Work, It's a <b>Passion</b>
       .col-xl-7
         - projects.each do |project|
           - link = project.link? ? project.link : project_path(project)
@@ -17,7 +17,7 @@
                   span.badge.text-bg-success.publish-badge Published
                 - else
                   span.badge.text-bg-danger.publish-badge Unpublished
-            .col-lg-8
+            .col-lg-8.align-content-center
               = link_to link do
                 h2.title= project.title
               p= rich_to_plain_without_images(project.content)

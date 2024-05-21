@@ -66,7 +66,10 @@ code {
     border-style: none none solid none;
     border-color: var(--white);
     font-family: "MS Sans Serif";
-    position: static; /* override since my site uses an absolute navbar */
+
+    /* overrides since my site uses an absolute navbar */
+    position: static;
+    margin-top: 0;
 
     .navbar-brand, .nav-link {
         color: var(--black)
