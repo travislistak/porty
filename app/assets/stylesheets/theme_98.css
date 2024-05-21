@@ -70,6 +70,7 @@ code {
     /* overrides since my site uses an absolute navbar */
     position: static;
     margin-top: 0;
+    padding-top: 20px;
 
     .navbar-brand, .nav-link {
         color: var(--black)
