@@ -52,11 +52,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_17_030909) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "article_types", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "published", null: false
+    t.bigint "article_type_id", null: false
+    t.index ["article_type_id"], name: "index_articles_on_article_type_id"
   end
 
   create_table "offlines", force: :cascade do |t|
