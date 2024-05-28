@@ -2,5 +2,11 @@
   .container.background-transparent
     .row.py-3
       .col-12.text-center
-        h1.title-3 Some other small projects
-      .col-12
+        h2 Some other small projects
+      .col-md-6
+        h3.text-center Credit Card Number Format Validator
+        = label_tag(:credit_card_number, 'Credit Card Number', class: 'form-label')
+        = text_field_tag(:credit_card_number, {}, class: 'form-control')
+        #ccNumberValidation.hidden Filler value
+      .col-md-6.text-center
+        h3 Routing Number Format Validator

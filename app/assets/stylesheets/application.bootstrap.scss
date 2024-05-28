@@ -29,6 +29,16 @@ h1 {
   overflow-wrap: break-word;
 }
 
+h2 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
 p.indent {
   text-indent: 20px;
 }
@@ -37,6 +47,7 @@ p.indent {
   height: 100vh;
 }
 
+// Replace the below with actual changes to h1, h2, h3
 .title-1 {
   font-size: 8rem;
   font-weight: lighter;
