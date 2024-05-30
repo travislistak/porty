@@ -1,49 +1,53 @@
 let cc_field = document.getElementById('credit_card_number');
 
-cc_field.addEventListener('input', readyToValidate());
+cc_field.addEventListener('input', (event) => {
+  readyToValidate(event.target.value);
+});
 
-function readyToValidate() {
-  if (!this.value < 16) {
-    validate(this.value);
+function readyToValidate(ccNumber) {
+  console.log("test");
+  console.log(ccNumber)
+  if (!ccNumber < 16) {
+    validate(ccNumber);
   }
 }
 
 function validate(ccNumber) {
+  ccNumber = Array.from(ccNumber.toString()).map(Number);
   let ccEvenNums = [];
   let ccOddNums = [];
   let displayNumber = ["x", "x", "x", "x"];
   let ccNumberValidation = document.getElementById('ccNumberValidation')
 
-  displayNumber.push(ccNumber.slice(
-    ccNumber.length - 4,
-    ccNumber.length
-  ));
+  displayNumber.push(ccNumber.slice(ccNumber.length - 4, ccNumber.length));
 
   let checkDigit = parseInt(ccNumber.pop());
 
 // p 'Check Digit is: ' + checkDigit.to_s
   let reversedCC = ccNumber.reverse();
+  console.log(reversedCC);
 
 // p 'Reversed Number is: ' + reversedCC.to_s
-  reversedCC.each_index((index) => {
-    let currentDigit;
-
+  reversedCC.forEach((element, index) => {
     if (index % 2 === 0) {
-      currentDigit = parseInt(reversedCC[index]) * 2;
+      console.log(`index ${index}`)
+      currentDigit = reversedCC[index] * 2;
+      console.log(currentDigit);
 
       if (currentDigit >= 10) {
         currentDigit -= 9;
-        return ccOddNums << parseInt(currentDigit)
+        return ccOddNums.push(currentDigit);
       } else {
-        return ccOddNums << parseInt(currentDigit)
+        return ccOddNums.push(currentDigit);
       }
     } else {
-      return ccEvenNums << parseInt(reversedCC[index])
+      return ccEvenNums.push(reversedCC[index]);
     }
   });
 
   let newNumber = ccEvenNums + ccOddNums;
-  let modded = newNumber.inject(0, "+") % 10;
+  console.log(`newNumber ${ccEvenNums}`);
+  let modded = newNumber.reduce() % 10;
 
 // p 'The modulo of the added array is: ' + modded.to_s
   let finalCheck = (10 - modded) % 10;

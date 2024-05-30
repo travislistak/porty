@@ -5,3 +5,4 @@ import * as bootstrap from "bootstrap"
 
 import "trix"
 import "@rails/actiontext"
+import "./credit_card_format_validator"
