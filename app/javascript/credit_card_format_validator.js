@@ -1,6 +1,6 @@
-let cc_field = document.getElementById('credit_card_number');
+let ccField = document.getElementById('credit_card_number');
 
-cc_field.addEventListener('input', (event) => {
+ccField.addEventListener('input', (event) => {
   readyToValidate(event.target.value);
 });
 
@@ -45,9 +45,29 @@ function validate(ccNumber) {
 
   let finalCheck = (10 - modded) % 10;
 
+  let validCheck = document.createElement("i")
+  validCheck.id = "valid-check";
+  validCheck.classList.add("bi", "bi-check-circle", "green", "ms-1");
+
+  let invalidCheck = document.createElement("i")
+  invalidCheck.id = "invalid-check";
+  invalidCheck.classList.add("bi", "bi-check-circle", "red", "ms-1");
+
   if (finalCheck !== checkDigit) {
+    if (document.getElementById("invalid-check") == null) {
+      ccField.parentNode.insertBefore(invalidCheck, ccField)
+    }
+    document.getElementById("valid-check").remove();
+    ccField.classList.add("invalid");
+    ccField.classList.remove("valid");
     console.log("Card: " + displayNumber.join.toString() + " is NOT a valid CC number.")
   } else {
+    if (document.getElementById("invalid-check") == null) {
+      ccField.parentNode.insertBefore(validCheck, ccField)
+    }
+    document.getElementById("invalid-check").remove();
+    ccField.classList.add("valid");
+    ccField.classList.remove("invalid");
     console.log("Card: " + displayNumber.join.toString() + " IS a valid CC number.")
   }
 }

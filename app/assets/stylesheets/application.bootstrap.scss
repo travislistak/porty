@@ -63,6 +63,20 @@ p.indent {
   font-weight: lighter;
 }
 
+.valid {
+  outline: 2px solid $green !important;
+}
+.green {
+  color: $green;
+}
+
+.invalid {
+  outline: 2px solid $red !important;
+}
+.red {
+  color: $red;
+}
+
 .background-transparent {
   background-color: transparent;
 }
