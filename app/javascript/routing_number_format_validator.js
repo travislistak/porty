@@ -3,53 +3,65 @@
  */
 
 /*
+  MICR FORMAT ONLY
+
   Always 9 digits long
   First 4 specify routing symbol
   Next 4 identify the institution
-  Finial digit is the checksum digit
+  Finial digit is the check digit
 
-  1. Multiply the individual digit a follows
-    Firt digit by 3
-    Second Digit by 7
-    Third Digit by 1
-    Continue this 3 more times for all 9 digit. (4th digit 3, 5th digit 7, 6th digit 1...)
-    0, 1, 2, * (3, 7, 1)
-    3, 4, 5, * (3, 7, 1)
-    6, 7, 8, * (3, 7, 1)
+  1. Take groups of three numbers, add them, then multiple by the following:
+    First group by 3
+    Second group by 7
+    Third group by 1
 
- 2. Add up all the digits
-
- 3. Check if the sum is a multiple of 10 (%10)
+ 2. Check if the sum of all the groups together is a multiple of 10 (%10)
 */
+import {setAsValid, setAsInvalid, clearValidations} from "./validate"
 
-routingNumber = ARGV.last
+let routingNumberField = document.getElementById('routing_number');
 
-if routingNumber.nil?
-  p "Please enter a valid, 9 digit routing number."
-  abort
-end
+routingNumberField.addEventListener('input', (event) => {
+  readyToValidate(String(event.target.value));
+});
 
-if routingNumber.match?(/\d{9}/)
+function readyToValidate(routingNumber) {
+  if (routingNumber.length == 9) {
+    validate(routingNumber);
+  } else {
+    clearValidations(routingNumberField, "rn");
+  }
+}
 
-  routingNumber = routingNumber.split('')
-  total = 0
+function validate(routingNumber) {
+  routingNumber = Array.from(routingNumber).map(Number);
+  let total = 0;
 
-# Test 123456789 = 20 53 86
+  for (i = 0; i < 3; i++) {
+    let groupTotal =
+      routingNumber[i] +
+      routingNumber[i + 3] +
+      routingNumber[i + 6]
 
-0.step(6, 3) do |i|
-total += routingNumber[i].to_i * 3
-total += routingNumber[i + 1].to_i * 7
-total += routingNumber[i + 2].to_i
-end
+    switch(i) {
+      case 0: {
+        total += groupTotal * 3;
+        break;
+      }
+      case 1: {
+        total += groupTotal * 7;
+        break;
+      }
+      default: {
+        total += groupTotal;
+        break;
+      }
+    }
+  }
 
-# Check if the number is diviible by 10, if so the format is valid.
-  if total % 10 != 0
-p "The routing number #{routingNumber.join} format is invalid."
-else
-p "The routing number #{routingNumber.join} format is valid!"
-end
-
-else
-p "Please enter a valid, 9 digit routing number."
-end
-
+  if (total % 10 === 0) {
+    setAsValid(routingNumberField, "rn");
+  } else {
+    setAsInvalid(routingNumberField, "rn");
+  }
+};
