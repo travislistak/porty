@@ -10,7 +10,15 @@ let fieldsToValidates = document.querySelectorAll("[validates-with]");
 fieldsToValidates.forEach((element) => {
   import("./validators/" + element.getAttribute("validates-with") + ".js").then((module) => {
     element.addEventListener('input', (event) => {
-      module[element.getAttribute("validates-with") + "Validator"](element.value);
+      let valid = module[element.getAttribute("validates-with") + "Validator"](element.value);
+
+      if (valid == "no") {
+        // nothing
+      } else if (valid) {
+        setAsValid();
+      } else {
+        setAsInvalid(element, "cc");
+      }
     });
   });
 });

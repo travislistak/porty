@@ -15,6 +15,7 @@ export function credit_card_formatValidator(ccNumber) {
   if (ccNumber.length >= 15 && ccNumber.length < 20) {
     hoochie(ccNumber);
   } else {
+    return "no";
     // clearValidations(ccField, "cc");
   }
 }
@@ -26,9 +27,9 @@ function hoochie(ccNumber) {
   let total = newNumber.reduce((accu, val) => accu + val, 0)
 
   if ((10 - (total % 10)) % 10 === checkDigit) {
-    setAsValid(ccField, "cc");
+    return true;
   } else {
-    setAsInvalid(ccField, "cc");
+    return false;
   }
 }
 
