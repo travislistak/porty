@@ -17,23 +17,16 @@
 
  2. Check if the sum of all the groups together is a multiple of 10 (%10)
 */
-import {setAsValid, setAsInvalid, clearValidations} from "../validate"
 
-let routingNumberField = document.getElementById('routing_number');
-
-routingNumberField.addEventListener('input', (event) => {
-  readyToValidate(String(event.target.value));
-});
-
-function readyToValidate(routingNumber) {
+export function validate(routingNumber) {
   if (routingNumber.length == 9) {
-    validate(routingNumber);
+    return correctFormat(routingNumber);
   } else {
-    clearValidations(routingNumberField, "rn");
+    return null;
   }
 }
 
-function validate(routingNumber) {
+function correctFormat(routingNumber) {
   routingNumber = Array.from(routingNumber).map(Number);
   let total = 0;
 
@@ -60,8 +53,8 @@ function validate(routingNumber) {
   }
 
   if (total % 10 === 0) {
-    setAsValid(routingNumberField, "rn");
+    return true;
   } else {
-    setAsInvalid(routingNumberField, "rn");
+    return false;
   }
 };

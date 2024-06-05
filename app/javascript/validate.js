@@ -1,17 +1,42 @@
 /* Created by Travis Listak */
 /*
   Simple validator
-  Imports validators defined in javascripts/validators
-  On your input element add an attribute for validates-with="name_of_validator"
-  Within your validator add a unique exported function
+  Dynamically imports validators defined in javascripts/validators, creates an event listner on the input field,
+  and based on the validator response will create an appropriate icon and change input outline color.
+
+  Responses from validators
+  * null  -> clear validations (hide icon, remove input outline)
+  * true  -> valid             (show valid icon, add green input outline)
+  * false -> invalid           (show invalid icon, add red input outline)
+
+  To use this validator:
+  1. On your input element add an attribute for validates-with="namdOfValidator".
+  2. In javascript/validators create a validator with the name name as used above.
+  3. Within your validator create an exported function with the 'validate'.
+     This function will return null, true, or false.
+
+  example:
+  1. DOM element
+     `<input type="text" name="credit_card_number" id="credit_card_number" value="" class="form-control" validates-with="creditCardFormat">`
+  2. Create javascripts/validators/creditCardFormat.js
+  3. Within creditCardFormat.js create an `export function validate(inputValue)`
+     It will take inputValue as a parameter and then return null, true, or false.
  */
 
+// Select all elements in DOM with a `validates-with` attribute
 let fieldsToValidates = document.querySelectorAll("[validates-with]");
+
 fieldsToValidates.forEach((element) => {
+  // Pull name from the element's `validates-with` attribute
   let validatorName = element.getAttribute("validates-with");
+
+  // Import the matching validator.js file
   import("./validators/" + validatorName + ".js").then((module) => {
+
+    // Create an input event listener on the element
     element.addEventListener('input', (event) => {
-      let valid = module[validatorName + "Validator"](element.value);
+      // Call the module's exported function when event is triggered
+      let valid = module["validate"](element.value);
 
       if (valid === null) {
         clearValidations(element, validatorName)
@@ -24,7 +49,7 @@ fieldsToValidates.forEach((element) => {
   });
 });
 
-export function setAsValid(field, idPrefix) {
+function setAsValid(field, idPrefix) {
   let invalidId = `${idPrefix}-invalid-check`;
   let validId = `${idPrefix}-valid-check`
 
@@ -39,7 +64,7 @@ export function setAsValid(field, idPrefix) {
   field.classList.remove("invalid");
 }
 
-export function setAsInvalid(field, idPrefix) {
+function setAsInvalid(field, idPrefix) {
   let invalidId = `${idPrefix}-invalid-check`;
   let validId = `${idPrefix}-valid-check`
 
@@ -54,7 +79,7 @@ export function setAsInvalid(field, idPrefix) {
   field.classList.remove("valid");
 }
 
-export function clearValidations(field, idPrefix) {
+function clearValidations(field, idPrefix) {
   let invalidId = `${idPrefix}-invalid-check`;
   let validId = `${idPrefix}-valid-check`
 

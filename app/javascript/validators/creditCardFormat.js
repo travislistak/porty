@@ -1,23 +1,18 @@
+/* Created by Travis Listak */
 /*
-  Created by Travis Listak
+  This validator will validate that a 15 - 19 digit credit card number
+  has a valid format and return either, null (clear validations),
+  true (valid) or false (invalid).
  */
-import {setAsValid, setAsInvalid, clearValidations} from "../validate"
-
-// let ccField = document.getElementById('credit_card_number');
-
-// ccField.addEventListener('input', (event) => {
-//   readyToValidate(String(event.target.value));
-// });
-
-export function creditCardFormatValidator(ccNumber) {
+export function validate(ccNumber) {
   if (ccNumber.length >= 15 && ccNumber.length < 20) {
-    return validate(ccNumber);
+    return correctFormat(ccNumber);
   } else {
     return null;
   }
 }
 
-function validate(ccNumber) {
+function correctFormat(ccNumber) {
   ccNumber = Array.from(ccNumber).map(Number);
   let checkDigit = parseInt(ccNumber.pop());
   let newNumber = reverseAndMod(ccNumber);
