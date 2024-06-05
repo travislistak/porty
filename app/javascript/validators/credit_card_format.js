@@ -1,23 +1,24 @@
 /*
   Created by Travis Listak
  */
-import {setAsValid, setAsInvalid, clearValidations} from "./validate"
+import {setAsValid, setAsInvalid, clearValidations} from "../validate"
 
-let ccField = document.getElementById('credit_card_number');
+// let ccField = document.getElementById('credit_card_number');
 
-ccField.addEventListener('input', (event) => {
-  readyToValidate(String(event.target.value));
-});
+// ccField.addEventListener('input', (event) => {
+//   readyToValidate(String(event.target.value));
+// });
 
-function readyToValidate(ccNumber) {
+export function validateCCNumber(ccNumber) {
+  console.log("validating");
   if (ccNumber.length >= 15 && ccNumber.length < 20) {
-    validate(ccNumber);
+    hoochie(ccNumber);
   } else {
     clearValidations(ccField, "cc");
   }
 }
 
-function validate(ccNumber) {
+function hoochie(ccNumber) {
   ccNumber = Array.from(ccNumber).map(Number);
   let checkDigit = parseInt(ccNumber.pop());
   let newNumber = reverseAndMod(ccNumber);

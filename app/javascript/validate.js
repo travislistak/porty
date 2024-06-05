@@ -1,30 +1,26 @@
-let validCheck = document.createElement("i")
-validCheck.classList.add("bi", "bi-check-circle", "green", "ms-1");
-let invalidCheck = document.createElement("i")
-invalidCheck.classList.add("bi", "bi-check-circle", "red", "ms-1");
+/* Created by Travis Listak */
+/*
+  Simple validator
+  Imports validators defined in javascripts/validators
+  On your input element add an attribute for validates-with="name_of_validator"
+  Within your validator add a unique exported function
+ */
 
-export function setAsInvalid(field, idPrefix) {
-  let invalidId = `${idPrefix}-invalid-check`;
-  let validId = `${idPrefix}-valid-check`
-  invalidCheck.id = invalidId;
-  validCheck.id = validId;
+let fieldsToValidates = document.querySelectorAll("[validates-with]");
+fieldsToValidates.forEach((element) => {
+  import("./validators/" + element.getAttribute("validates-with") + ".js");
+  element.addEventListener('input', (event) => {
+    validateWith(element.getAttribute("validates-with"));
+  })
+});
 
-  let invalidCheckField = document.getElementById(invalidId);
-  let validCheckField = document.getElementById(validId);
-
-  if (invalidCheckField == null) {
-    field.parentNode.insertBefore(invalidCheck, field)
-  }
-  removeElement(validCheckField);
-  field.classList.add("invalid");
-  field.classList.remove("valid");
+function validateWith(validator) {
+  console.log(validator);
+  validateCCNumber();
 }
 
 export function setAsValid(field, idPrefix) {
-  let invalidId = `${idPrefix}-invalid-check`;
-  let validId = `${idPrefix}-valid-check`
-  invalidCheck.id = invalidId;
-  validCheck.id = validId;
+  createIcons(idPrefix);
 
   let invalidCheckField = document.getElementById(invalidId);
   let validCheckField = document.getElementById(validId);
@@ -37,6 +33,20 @@ export function setAsValid(field, idPrefix) {
   field.classList.remove("invalid");
 }
 
+export function setAsInvalid(field, idPrefix) {
+  createIcons(idPrefix);
+
+  let invalidCheckField = document.getElementById(invalidId);
+  let validCheckField = document.getElementById(validId);
+
+  if (invalidCheckField == null) {
+    field.parentNode.insertBefore(invalidCheck, field)
+  }
+  removeElement(validCheckField);
+  field.classList.add("invalid");
+  field.classList.remove("valid");
+}
+
 export function clearValidations(field, idPrefix) {
   let invalidId = `${idPrefix}-invalid-check`;
   let validId = `${idPrefix}-valid-check`
@@ -46,7 +56,18 @@ export function clearValidations(field, idPrefix) {
   removeElement(document.getElementById(invalidId));
 }
 
-export function removeElement(element) {
+function createIcons(idPrefix) {
+  let validCheck = document.createElement("i")
+  validCheck.id = `${idPrefix}-valid-check`;
+  validCheck.classList.add("bi", "bi-check-circle", "green", "ms-1");
+  let invalidCheck = document.createElement("i")
+  invalidCheck.id = `${idPrefix}-invalid-check`;
+  invalidCheck.classList.add("bi", "bi-check-circle", "green", "ms-1");
+
+  return { valid: validCheck, invalid: invalidCheck }
+}
+
+function removeElement(element) {
   if(element != null) {
     element.remove();
   }

@@ -17,7 +17,7 @@
 
  2. Check if the sum of all the groups together is a multiple of 10 (%10)
 */
-import {setAsValid, setAsInvalid, clearValidations} from "./validate"
+import {setAsValid, setAsInvalid, clearValidations} from "../validate"
 
 let routingNumberField = document.getElementById('routing_number');
 
