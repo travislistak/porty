@@ -8,16 +8,12 @@
 
 let fieldsToValidates = document.querySelectorAll("[validates-with]");
 fieldsToValidates.forEach((element) => {
-  import("./validators/" + element.getAttribute("validates-with") + ".js");
-  element.addEventListener('input', (event) => {
-    validateWith(element.getAttribute("validates-with"));
-  })
+  import("./validators/" + element.getAttribute("validates-with") + ".js").then((module) => {
+    element.addEventListener('input', (event) => {
+      module[element.getAttribute("validates-with") + "Validator"](element.value);
+    });
+  });
 });
-
-function validateWith(validator) {
-  console.log(validator);
-  validateCCNumber();
-}
 
 export function setAsValid(field, idPrefix) {
   createIcons(idPrefix);

@@ -9,12 +9,13 @@ import {setAsValid, setAsInvalid, clearValidations} from "../validate"
 //   readyToValidate(String(event.target.value));
 // });
 
-export function validateCCNumber(ccNumber) {
+export function credit_card_formatValidator(ccNumber) {
   console.log("validating");
+  console.log(ccNumber);
   if (ccNumber.length >= 15 && ccNumber.length < 20) {
     hoochie(ccNumber);
   } else {
-    clearValidations(ccField, "cc");
+    // clearValidations(ccField, "cc");
   }
 }
 
