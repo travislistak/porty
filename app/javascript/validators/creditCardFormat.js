@@ -9,18 +9,15 @@ import {setAsValid, setAsInvalid, clearValidations} from "../validate"
 //   readyToValidate(String(event.target.value));
 // });
 
-export function credit_card_formatValidator(ccNumber) {
-  console.log("validating");
-  console.log(ccNumber);
+export function creditCardFormatValidator(ccNumber) {
   if (ccNumber.length >= 15 && ccNumber.length < 20) {
-    hoochie(ccNumber);
+    return validate(ccNumber);
   } else {
-    return "no";
-    // clearValidations(ccField, "cc");
+    return null;
   }
 }
 
-function hoochie(ccNumber) {
+function validate(ccNumber) {
   ccNumber = Array.from(ccNumber).map(Number);
   let checkDigit = parseInt(ccNumber.pop());
   let newNumber = reverseAndMod(ccNumber);

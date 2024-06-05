@@ -8,29 +8,31 @@
 
 let fieldsToValidates = document.querySelectorAll("[validates-with]");
 fieldsToValidates.forEach((element) => {
-  import("./validators/" + element.getAttribute("validates-with") + ".js").then((module) => {
+  let validatorName = element.getAttribute("validates-with");
+  import("./validators/" + validatorName + ".js").then((module) => {
     element.addEventListener('input', (event) => {
-      let valid = module[element.getAttribute("validates-with") + "Validator"](element.value);
+      let valid = module[validatorName + "Validator"](element.value);
 
-      if (valid == "no") {
-        // nothing
+      if (valid === null) {
+        clearValidations(element, validatorName)
       } else if (valid) {
-        setAsValid();
+        setAsValid(element, validatorName);
       } else {
-        setAsInvalid(element, "cc");
+        setAsInvalid(element, validatorName);
       }
     });
   });
 });
 
 export function setAsValid(field, idPrefix) {
-  createIcons(idPrefix);
+  let invalidId = `${idPrefix}-invalid-check`;
+  let validId = `${idPrefix}-valid-check`
 
   let invalidCheckField = document.getElementById(invalidId);
   let validCheckField = document.getElementById(validId);
 
   if (validCheckField == null) {
-    field.parentNode.insertBefore(validCheck, field)
+    field.parentNode.insertBefore(validCheck(idPrefix), field)
   }
   removeElement(invalidCheckField)
   field.classList.add("valid");
@@ -38,13 +40,14 @@ export function setAsValid(field, idPrefix) {
 }
 
 export function setAsInvalid(field, idPrefix) {
-  createIcons(idPrefix);
+  let invalidId = `${idPrefix}-invalid-check`;
+  let validId = `${idPrefix}-valid-check`
 
   let invalidCheckField = document.getElementById(invalidId);
   let validCheckField = document.getElementById(validId);
 
   if (invalidCheckField == null) {
-    field.parentNode.insertBefore(invalidCheck, field)
+    field.parentNode.insertBefore(invalidCheck(idPrefix), field)
   }
   removeElement(validCheckField);
   field.classList.add("invalid");
@@ -60,16 +63,20 @@ export function clearValidations(field, idPrefix) {
   removeElement(document.getElementById(invalidId));
 }
 
-function createIcons(idPrefix) {
+function validCheck(idPrefix) {
   let validCheck = document.createElement("i")
   validCheck.id = `${idPrefix}-valid-check`;
   validCheck.classList.add("bi", "bi-check-circle", "green", "ms-1");
+  return validCheck
+}
+
+function invalidCheck(idPrefix) {
   let invalidCheck = document.createElement("i")
   invalidCheck.id = `${idPrefix}-invalid-check`;
-  invalidCheck.classList.add("bi", "bi-check-circle", "green", "ms-1");
-
-  return { valid: validCheck, invalid: invalidCheck }
+  invalidCheck.classList.add("bi", "bi-exclamation-circle", "red", "ms-1");
+  return invalidCheck;
 }
+
 
 function removeElement(element) {
   if(element != null) {
