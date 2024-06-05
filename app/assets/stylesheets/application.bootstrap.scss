@@ -26,15 +26,63 @@ html {
 }
 
 h1 {
-  scroll-margin-top: 0;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+p.indent {
+  text-indent: 20px;
 }
 
 .vh-100 {
   height: 100vh;
 }
 
-.pb-10 {
-  padding-bottom: 10rem;
+// Replace the below with actual changes to h1, h2, h3
+.title-1 {
+  font-size: 8rem;
+  font-weight: lighter;
+}
+
+.title-2 {
+  font-size: 4rem;
+  font-weight: lighter;
+}
+
+.title-3 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.valid {
+  outline: 2px solid $green !important;
+}
+.green {
+  color: $green;
+}
+
+.invalid {
+  outline: 2px solid $red !important;
+}
+.red {
+  color: $red;
+}
+
+.background-transparent {
+  background-color: transparent;
+}
+
+.box-shadow {
+  filter: drop-shadow(7px 7px 6px #000)
 }
 
 .title-column {
@@ -83,7 +131,6 @@ h1 {
 
 // small 576
 // medium 768
-
 @media only screen and (max-width: 576px) {
   .navbar {
     background: var(--opposite-gradient);

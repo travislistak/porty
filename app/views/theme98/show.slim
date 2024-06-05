@@ -4,11 +4,12 @@
   .container-fluid
     .row
       h1 Theme98
-      h2 A Bootstrap theme inspired by Windows and crafted by hand
+      h2 A drop-in Bootstrap Theme Inspired by Windows 95 & 98
     hr
     .row.mb-3
       h3 Buttons
       p Use buttons exactly how they come with bootstrap
+      p.text-center <b>Click them!</b>
       .col-10.offset-1
         .div.text-center
           button.btn Button
@@ -62,9 +63,8 @@
               button.btn Cancel
     .row
       .col-12
-        <p> Begin with a <code>form</code> element followed by the <code>.window-header</code> where you will set the
+        p Begin with a <code>form</code> element followed by the <code>.window-header</code> where you will set the
           |  form title followed by the <code>.window-body</code> which will contain your form's body.
-        </p>
       .col-lg-8.offset-lg-2
         pre.code-snippet
           |
@@ -77,4 +77,12 @@
                   button.btn.disabled.window-maximize-btn
                   button.btn.disabled.window-close-btn
               .window-body
+      .col-12
+        p Some suggestions with the buttons:
+        ul
+          li Help button (?) could be used to display a tooltip with any relevant form information.
+          li Minimize (_) collapse the form.
+          li Maximize ([]) uncollapse the form.
+          li Close (X) clear all the form fields.
+
     hr

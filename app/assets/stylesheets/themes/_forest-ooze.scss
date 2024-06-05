@@ -26,14 +26,22 @@
   }
 
   .gradient-background-1 {
-    background: linear-gradient(160deg, var(--super-dark-green-ooze) 0%, var(--dark-black-ooze) 100%); // -190
+    background: linear-gradient(170deg, var(--super-dark-green-ooze) 20%, var(--dark-black-ooze) 100%); // -190
   }
 
-  .gradient-background-2 { // 2
-    background: linear-gradient(-177deg, rgba(255, 0, 0, 0), var(--super-dark-green-ooze), var(--dark-black-ooze));
+  .dark-green-background {
+    background-color: var(--super-dark-green-ooze);
   }
 
-  .gradient-background-3 { // 3
-    background: linear-gradient(177deg, var(--dark-black-ooze) 21%, var(--super-dark-green-ooze) 71%, var(--dark-black-ooze) 97%);
+  .bs-body-background {
+    background-color: var(--bs-body-bg);
+  }
+
+  .gradient-background-2 {
+    background: linear-gradient(190deg, var(--dark-black-ooze) 0%, var(--super-dark-green-ooze) 90%);
+  }
+
+  .gradient-background-3 {
+    background: linear-gradient(170deg, var(--super-dark-green-ooze) 20%, var(--dark-black-ooze) 100%); // -190
   }
 }

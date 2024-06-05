@@ -1,0 +1,51 @@
+.container-fluid.bs-body-background
+  .container.background-transparent
+    .row.py-3
+      .col-12.text-center
+        h2 Some other small projects
+      .col-md-6
+        h3.text-center Credit Card Number Format Validator
+        = label_tag(:credit_card_number, 'Credit Card Number', class: 'form-label')
+        = text_field_tag(:credit_card_number, {}, class: 'form-control', "validates-with" => "creditCardFormat")
+        h3.text-center.mt-3 Valid Test Card Numbers
+        ul
+          li
+            | Amex
+            ul
+              li 374245455400126
+          li
+            | Mastercard
+            ul
+              li 5425233430109903
+              li 5425233430109903
+          li
+            | Visa
+            ul
+              li 4111111111111111
+              li 4000000000001000
+          li
+            | Discover
+            ul
+              li 6011000180331112
+        h3.text-center Invalid Test Card Numbers
+        ul
+          li 4857481857478189
+          li 374245455400127
+      .col-md-6
+        h3.text-center MICR Routing Number Format Validator
+        = label_tag(:routing_number, 'Routing Number', class: 'form-label')
+        = text_field_tag(:routing_number, {}, class: 'form-control', "validates-with" => "routingNumberFormat")
+        h3.text-center.mt-3 Valid Routing Numbers
+        ul
+          li
+            | Chase Bank utah
+            ul
+              li 124001545
+          li
+            | Cyprus Credit Union
+            ul
+              li 324377202
+        h3.text-center Invalid Routing Numbers
+        ul
+          li 123456789
+          li 324377204
