@@ -29,6 +29,20 @@
     --bs-secondary-color: black;
 }
 
+/* overrides for styles custom to my site */
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 2rem;
+}
+.navbar {
+    position: static;
+    margin-top: 0;
+    padding-top: 20px;
+}
+/* end overrides */
+
 body {
     font-family: "MS Sans Serif";
     background: var(--desktop-blue);
@@ -70,11 +84,6 @@ code {
     border-style: none none solid none;
     border-color: var(--white);
     font-family: "MS Sans Serif";
-
-    /* overrides since my site uses an absolute navbar */
-    position: static;
-    margin-top: 0;
-    padding-top: 20px;
 
     .navbar-brand, .nav-link {
         color: var(--black)
