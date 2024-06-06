@@ -4,7 +4,7 @@
       .col-12.text-center
         h2 Some other small projects
       .col-md-6
-        h3.text-center Credit Card Number Format Validator
+        h3.text-center.mt-3 Credit Card Number Format Validator
         = label_tag(:credit_card_number, 'Credit Card Number', class: 'form-label')
         = text_field_tag(:credit_card_number, {}, class: 'form-control', "validates-with" => "creditCardFormat")
         h3.text-center.mt-3 Valid Test Card Numbers
@@ -32,7 +32,7 @@
           li 4857481857478189
           li 374245455400127
       .col-md-6
-        h3.text-center MICR Routing Number Format Validator
+        h3.text-center.mt-3 MICR Routing Number Format Validator
         = label_tag(:routing_number, 'Routing Number', class: 'form-label')
         = text_field_tag(:routing_number, {}, class: 'form-control', "validates-with" => "routingNumberFormat")
         h3.text-center.mt-3 Valid Routing Numbers

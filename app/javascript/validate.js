@@ -14,6 +14,7 @@
   2. In javascript/validators create a validator with the name name as used above.
   3. Within your validator create an exported function with the 'validate'.
      This function will return null, true, or false.
+  4. Add an import to you JS builder.
 
   example:
   1. DOM element
@@ -21,6 +22,7 @@
   2. Create javascripts/validators/creditCardFormat.js
   3. Within creditCardFormat.js create an `export function validate(inputValue)`
      It will take inputValue as a parameter and then return null, true, or false.
+  4. Using esbuild with Rails 7 `import "./validators/creditCardFormat"`.
  */
 
 // Select all elements in DOM with a `validates-with` attribute
@@ -32,8 +34,6 @@ fieldsToValidates.forEach((element) => {
 
   // Import the matching validator.js file
   import("./validators/" + validatorName + ".js").then((module) => {
-
-    // Create an input event listener on the element
     element.addEventListener('input', (event) => {
       // Call the module's exported function when event is triggered
       let valid = module["validate"](element.value);
@@ -50,11 +50,8 @@ fieldsToValidates.forEach((element) => {
 });
 
 function setAsValid(field, idPrefix) {
-  let invalidId = `${idPrefix}-invalid-check`;
-  let validId = `${idPrefix}-valid-check`
-
-  let invalidCheckField = document.getElementById(invalidId);
-  let validCheckField = document.getElementById(validId);
+  let validCheckField = document.getElementById(`${idPrefix}-valid-check`);
+  let invalidCheckField = document.getElementById(`${idPrefix}-invalid-check`);
 
   if (validCheckField == null) {
     field.parentNode.insertBefore(validCheck(idPrefix), field)
@@ -65,11 +62,8 @@ function setAsValid(field, idPrefix) {
 }
 
 function setAsInvalid(field, idPrefix) {
-  let invalidId = `${idPrefix}-invalid-check`;
-  let validId = `${idPrefix}-valid-check`
-
-  let invalidCheckField = document.getElementById(invalidId);
-  let validCheckField = document.getElementById(validId);
+  let validCheckField = document.getElementById(`${idPrefix}-valid-check`);
+  let invalidCheckField = document.getElementById(`${idPrefix}-invalid-check`);
 
   if (invalidCheckField == null) {
     field.parentNode.insertBefore(invalidCheck(idPrefix), field)
@@ -80,12 +74,9 @@ function setAsInvalid(field, idPrefix) {
 }
 
 function clearValidations(field, idPrefix) {
-  let invalidId = `${idPrefix}-invalid-check`;
-  let validId = `${idPrefix}-valid-check`
-
   field.classList.remove("valid", "invalid");
-  removeElement(document.getElementById(validId));
-  removeElement(document.getElementById(invalidId));
+  removeElement(document.getElementById(`${idPrefix}-valid-check`));
+  removeElement(document.getElementById(`${idPrefix}-invalid-check`));
 }
 
 function validCheck(idPrefix) {
@@ -101,7 +92,6 @@ function invalidCheck(idPrefix) {
   invalidCheck.classList.add("bi", "bi-exclamation-circle", "red", "ms-1");
   return invalidCheck;
 }
-
 
 function removeElement(element) {
   if(element != null) {
