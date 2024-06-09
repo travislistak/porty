@@ -1,9 +1,22 @@
 .container-fluid.gradient-background-3
-  .container.background-transparent
-    .row.py-3
+  .container.background-transparent.personal-container
+    .row.mb-4
       .col-12.text-center
         h2.mb-3#personal About Me
-      h3 Motorcycles
-      h3 Backpacking
-      h3 Home Projects
-      h3 Gardening
+    .row.interest-row
+      .col-md-3.image-container
+        = image_tag("motorcycle.png", class: "full")
+      .col-md-9
+        h3 Motorcycles
+        p I have a passion for riding. I recently got a Harley Lowrider S.
+    .row.interest-row
+      .col-md-3.image-container
+        .h-25
+          = image_tag("backpacking1.png", class: "small center-image")
+          = image_tag("backpacking2.png", class: "small right-image")
+          = image_tag("backpacking3.png", class: "small left-image")
+      .col-md-9
+        h3 Backpacking
+        p I go backpacking. I've been to Lake Aloha in California, .
+    h3 Home Projects
+    h3 Gardening

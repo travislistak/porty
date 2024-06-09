@@ -54,7 +54,6 @@
   }
 
   img {
-    //border-radius: 12px;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -65,9 +64,56 @@
     color: var(--bs-body-color);
   }
 
-  .publish-badge {
-    position: absolute;
-    left: 0;
-    font-size: 1rem;
+  //.publish-badge {
+  //  position: absolute;
+  //  left: 0;
+  //  font-size: 1rem;
+  //}
+}
+
+.personal-container {
+  .interest-row {
+    height: 250px;
+    margin-bottom: 120px;
+
+    .image-container {
+      position: static;
+      height: 250px;
+
+      img {
+        object-fit: cover;
+        transition: 0.5s;
+        &:hover {
+          transform: scale(1.2);
+          z-index: 100;
+        }
+      }
+
+      img.full {
+        height: 250px;
+        width: 100%;
+        position: relative;
+      }
+
+      img.small {
+        height: 200px;
+        width: 75%;
+        position: relative;
+      }
+
+      .center-image {
+        z-index: 1;
+      }
+
+      .right-image {
+        top: -250px;
+        transform: rotate(4deg);
+      }
+
+      .left-image {
+        top: -500px;
+        transform: rotate(-6deg);
+      }
+    }
   }
 }
