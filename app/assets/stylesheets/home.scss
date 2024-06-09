@@ -71,6 +71,7 @@
 
     img {
       object-fit: cover;
+      transition: 0.5s;
     }
 
     img.full {
@@ -78,7 +79,7 @@
       width: 100%;
       position: relative;
     }
-    .gone {
+    .behind {
       z-index: -1;
     }
 
@@ -86,6 +87,14 @@
       height: 200px;
       width: 250px;
       position: absolute;
+    }
+
+    img.hover {
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        z-index: 1;
+      }
     }
 
     .center-image {
@@ -108,7 +117,18 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 330px) and (max-width: 526px) {
+  .personal-container {
+    .image-container {
+      img.small {
+        height: auto;
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .personal-container {
     .image-container {
       img.small {
@@ -119,7 +139,7 @@
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
   .personal-container {
     .image-container {
       img.small {

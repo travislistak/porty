@@ -5,6 +5,7 @@ import * as bootstrap from "bootstrap"
 
 import "trix"
 import "@rails/actiontext"
+import "./images"
 import "./validate"
 import "./validators/creditCardFormat"
 import "./validators/routingNumberFormat"
