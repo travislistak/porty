@@ -127,6 +127,8 @@ p.indent {
 // small 576
 // medium 768
 // large 992
+// xlarge 1200
+// xxlarge 1400
 @media only screen and (max-width: 576px) {
   .navbar {
     background: var(--opposite-gradient);
