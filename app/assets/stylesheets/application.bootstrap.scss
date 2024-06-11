@@ -47,6 +47,17 @@ h4 {
   font-weight: lighter;
 }
 
+.trix-content, trix-editor {
+  pre {
+    background-color: var(--bs-secondary-color) !important;
+    color: var(--bs-body-color) !important;
+  }
+}
+
+blockquote {
+  font-size: 1.05rem;
+}
+
 .card-title {
   font-size: 2rem;
 }

@@ -1,6 +1,10 @@
 .trix-button {
-  color: white !important;
+  background-color: white !important;
 }
+.trix-active {
+  background-color: var(--bs-border-color) !important;
+}
+
 #article_content, #project_content {
   min-height: 50vh;
   resize: vertical;

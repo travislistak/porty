@@ -1,17 +1,20 @@
-- if user_signed_in?
-  .row.justify-content-start.form-control.mt-3.mb-3
-    - if @project.published?
-      = button_to "Unpublish", article_path(@project, article: { published: false }), method: :put, class: 'btn btn-outline-danger'
-    - else
-      = button_to "Publish", article_path(@project, article: { published: true }), method: :put, class: 'btn btn-outline-success'
+/ - if user_signed_in?
+/   .row.justify-content-start.form-control.mt-3.mb-3
+/     - if @project.published?
+/       = button_to "Unpublish", article_path(@project, article: { published: false }), method: :put, class: 'btn btn-outline-danger'
+/     - else
+/       = button_to "Publish", article_path(@project, article: { published: true }), method: :put, class: 'btn btn-outline-success'
 / .row.mb-5
 /   .header-image-container.col-md-12
 /     - if @project.header_image.present?
 /       = image_tag(@project.header_image, class: 'header-image')
 /     - else
 /       = image_tag("placeholder.png", class: 'header-image')
-.row
-  .text-center
-    h1.article-title.mb-5= @project.title
-  hr
-  = @project.content
+.container-fluid.gradient-background
+  .container
+    .row
+      .col-12.mt-5
+        .text-center.mt-4
+          h1.article-title.mb-5= @project.title
+        hr
+        = @project.content
