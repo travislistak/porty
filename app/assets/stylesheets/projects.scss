@@ -1,4 +1,10 @@
-// index
+.trix-content {
+  pre {
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+  }
+}
+
 .article-box {
   margin-bottom: 3rem;
   position: relative;
