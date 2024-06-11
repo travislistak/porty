@@ -1,0 +1,19 @@
+.container-fluid.gradient-background-2.py-5
+  .container.background-transparent
+    .row
+      .col-xl-5.align-content-center.text-start
+        h2.mx-4#projects Web Dev is More Than Work, it's a <b>Passion</b>
+      .col-xl-7
+        - projects.each do |project|
+          - link = project.link? ? project.link : project_path(project)
+          .row.project-row
+            .col-lg-4.image-container.box-shadow
+              = link_to link do
+                - if project.header_image.present?
+                  = image_tag(project.header_image)
+                - else
+                  = image_tag("placeholder.png")
+            .col-lg-8.align-content-center
+              = link_to link do
+                h3.title.project-title= project.title
+              p= rich_to_plain_without_images(project.content)

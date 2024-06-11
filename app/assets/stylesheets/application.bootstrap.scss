@@ -10,6 +10,7 @@ $primary: #024225;
 @import "footer";
 @import "articles";
 @import "trix_styles";
+@import "image_modal";
 
 // faded borders https://codepen.io/ptb/pen/kaWjeL
 
@@ -26,17 +27,28 @@ html {
 }
 
 h1 {
+  font-size: 8rem;
+  font-weight: lighter;
   overflow-wrap: break-word;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: lighter;
 }
 
 h3 {
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+h4 {
   font-size: 1.5rem;
   font-weight: lighter;
+}
+
+.card-title {
+  font-size: 2rem;
 }
 
 p.indent {
@@ -47,25 +59,10 @@ p.indent {
   height: 100vh;
 }
 
-// Replace the below with actual changes to h1, h2, h3
-.title-1 {
-  font-size: 8rem;
-  font-weight: lighter;
-}
-
-.title-2 {
-  font-size: 4rem;
-  font-weight: lighter;
-}
-
-.title-3 {
-  font-size: 2rem;
-  font-weight: lighter;
-}
-
 .valid {
   outline: 2px solid $green !important;
 }
+
 .green {
   color: $green;
 }
@@ -73,8 +70,17 @@ p.indent {
 .invalid {
   outline: 2px solid $red !important;
 }
+
 .red {
   color: $red;
+}
+
+.click-enlarge {
+  cursor: zoom-in;
+}
+
+.click-shrink {
+  cursor: zoom-out;
 }
 
 .background-transparent {
@@ -131,6 +137,9 @@ p.indent {
 
 // small 576
 // medium 768
+// large 992
+// xlarge 1200
+// xxlarge 1400
 @media only screen and (max-width: 576px) {
   .navbar {
     background: var(--opposite-gradient);
@@ -161,5 +170,11 @@ p.indent {
         margin: 16px 0;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .project-title {
+    margin-top: 20px;
   }
 }

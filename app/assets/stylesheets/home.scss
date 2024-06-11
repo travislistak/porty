@@ -2,6 +2,20 @@
   background: var(--bs-tertiary-bg);
 }
 
+.experience-icon {
+  font-size: 2rem;
+  // Pair with h3
+}
+
+.experience-container {
+  padding-left: 0;
+  padding-right: 0;
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .container-fluid.page-banner {
   padding: 0;
 
@@ -26,7 +40,7 @@
 }
 
 .project-row {
-  height: 33.33%;
+  height: 50%; // 33.33%
   position: relative;
   padding: 3rem 0;
 
@@ -40,7 +54,6 @@
   }
 
   img {
-    //border-radius: 12px;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -50,10 +63,130 @@
   a {
     color: var(--bs-body-color);
   }
+}
 
-  .publish-badge {
-    position: absolute;
-    left: 0;
-    font-size: 1rem;
+.personal-container {
+  .image-container {
+    position: relative;
+
+    img {
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    img.full {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    .behind {
+      z-index: -1;
+    }
+
+    img.small {
+      height: 200px;
+      width: 250px;
+      position: absolute;
+    }
+
+    img.hover {
+      &:hover {
+        transform: scale(1.2);
+        z-index: 1;
+      }
+    }
+
+    .backpacking {
+      .center-image {
+        left: 25%;
+        top: 0;
+        transform: rotate(0.9deg);
+      }
+
+      .right-image {
+        left: 50%;
+        bottom: 4px;
+        transform: rotate(6deg);
+      }
+
+      .left-image {
+        left: 10px;
+        bottom: 0;
+        transform: rotate(-4deg);
+      }
+    }
+
+    .gardening {
+      .center-image {
+        left: 12px;
+        top: 0;
+        transform: rotate(0.3deg);
+      }
+
+      .right-image {
+        left: 50%;
+        top: 40%;
+        transform: rotate(4deg);
+      }
+
+      .left-image {
+        left: 10px;
+        bottom: 0;
+        transform: rotate(-3deg);
+      }
+    }
+
+    .home-projects {
+      .center-image {
+        right: 0;
+        top: 0;
+        transform: rotate(0.3deg);
+      }
+
+      .right-image {
+        right: 10px;
+        bottom: 0;
+        transform: rotate(3deg);
+      }
+
+      .left-image {
+        left: 10%;
+        top: 18%;
+        transform: rotate(5deg);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 330px) and (max-width: 526px) {
+  .personal-container {
+    .image-container {
+      img.small {
+        height: 40%;
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .personal-container {
+    .image-container {
+      img.small {
+        height: 100px;
+        width: 150px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1400px) {
+  .personal-container {
+    .image-container {
+      img.small {
+        height: 150px;
+        width: 200px;
+      }
+    }
   }
 }
