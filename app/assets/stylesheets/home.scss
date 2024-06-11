@@ -96,22 +96,64 @@
       }
     }
 
-    .center-image {
-      left: 25%;
-      top: 0;
-      transform: rotate(0.9deg);
+    .backpacking {
+      .center-image {
+        left: 25%;
+        top: 0;
+        transform: rotate(0.9deg);
+      }
+
+      .right-image {
+        left: 50%;
+        bottom: 4px;
+        transform: rotate(6deg);
+      }
+
+      .left-image {
+        left: 10px;
+        bottom: 0;
+        transform: rotate(-4deg);
+      }
     }
 
-    .right-image {
-      left: 50%;
-      bottom: 4px;
-      transform: rotate(6deg);
+    .gardening {
+      .center-image {
+        left: 12px;
+        top: 0;
+        transform: rotate(0.3deg);
+      }
+
+      .right-image {
+        left: 50%;
+        top: 40%;
+        transform: rotate(4deg);
+      }
+
+      .left-image {
+        left: 10px;
+        bottom: 0;
+        transform: rotate(-3deg);
+      }
     }
 
-    .left-image {
-      left: 10px;
-      bottom: 0;
-      transform: rotate(-4deg);
+    .home-projects {
+      .center-image {
+        right: 0;
+        top: 0;
+        transform: rotate(0.3deg);
+      }
+
+      .right-image {
+        right: 10px;
+        bottom: 0;
+        transform: rotate(3deg);
+      }
+
+      .left-image {
+        left: 10%;
+        top: 18%;
+        transform: rotate(5deg);
+      }
     }
   }
 }
@@ -120,7 +162,7 @@
   .personal-container {
     .image-container {
       img.small {
-        height: auto;
+        height: 40%;
         width: 40%;
       }
     }
@@ -138,7 +180,7 @@
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
+@media only screen and (min-width: 992px) and (max-width: 1400px) {
   .personal-container {
     .image-container {
       img.small {
