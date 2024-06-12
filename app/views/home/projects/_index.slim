@@ -16,4 +16,4 @@
             .col-lg-8.align-content-center
               = link_to link do
                 h3.title.project-title= project.title
-              p= rich_to_plain_without_images(project.content)
+              p= rich_to_plain_without_images(project.content).truncate(250)

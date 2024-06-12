@@ -8,7 +8,7 @@ $primary: #024225;
 @import "navigation";
 @import "home";
 @import "footer";
-@import "articles";
+@import "projects";
 @import "trix_styles";
 @import "image_modal";
 
@@ -45,6 +45,17 @@ h3 {
 h4 {
   font-size: 1.5rem;
   font-weight: lighter;
+}
+
+.trix-content, trix-editor {
+  pre {
+    background-color: var(--bs-secondary-color) !important;
+    color: var(--bs-body-color) !important;
+  }
+}
+
+blockquote {
+  font-size: 1.05rem;
 }
 
 .card-title {
