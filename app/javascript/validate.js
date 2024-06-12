@@ -30,7 +30,6 @@
   Turbo uses page caching and hitting the back button is a restoration visit so we need to
   find the elements needing a validator everytime the page is loaded.
  */
-
 document.addEventListener("turbo:load", () => {
   setValidators();
 })
