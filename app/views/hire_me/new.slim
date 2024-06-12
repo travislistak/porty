@@ -1,0 +1,17 @@
+.container-fluid.gradient-background
+  .container
+    .row
+      .col-12.mt-5
+        .text-center.mt-4
+          h1.article-title.mb-5 Hire Me
+    .row.justify-content-center
+      .col-md-6.mb-3
+        .mb-3
+          = label_tag(:email, 'Email Address', class: 'form-label')
+          = text_field_tag(:email, {}, class: 'form-control')
+        .mb-3
+          = label_tag(:company, 'Company', class: 'form-label')
+          = text_field_tag(:email, {}, class: 'form-control')
+        .mb-3
+          / = f.label :content, 'Message', class: 'form-label'
+          / = f.rich_text_area :content, class: 'form-control'

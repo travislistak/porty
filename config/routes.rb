@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   # Define your application routes wper the DSL in https://guides.rubyonrails.org/routing.html
 
   root "home#index"
-  resources :articles
   resources :projects
-  resources :offlines
+  # resources :hire_me, only: [:new, :create]
   get "/theme98" => "theme98#show"
-  get "/hireme" => "hire_me#index"
+  get "/hire_me" => "hire_me#new"
+  post "/hire_me" => "hire_me#create"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
