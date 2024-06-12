@@ -25,29 +25,40 @@
   4. Using esbuild with Rails 7 `import "./validators/creditCardFormat"`.
  */
 
-// Select all elements in DOM with a `validates-with` attribute
-let fieldsToValidates = document.querySelectorAll("[validates-with]");
+/*
+  If not using Turbo then change the event to be when the DOM is loaded.
+  Turbo uses page caching and hitting the back button is a restoration visit so we need to
+  find the elements needing a validator everytime the page is loaded.
+ */
+document.addEventListener("turbo:load", () => {
+  setValidators();
+})
 
-fieldsToValidates.forEach((element) => {
-  // Pull name from the element's `validates-with` attribute
-  let validatorName = element.getAttribute("validates-with");
+function setValidators() {
+  // Select all elements in DOM with a `validates-with` attribute
+  let fieldsToValidates = document.querySelectorAll("[validates-with]");
 
-  // Import the matching validator.js file
-  import("./validators/" + validatorName + ".js").then((module) => {
-    element.addEventListener('input', (event) => {
-      // Call the module's exported function when event is triggered
-      let valid = module["validate"](element.value);
+  fieldsToValidates.forEach((element) => {
+    // Pull name from the element's `validates-with` attribute
+    let validatorName = element.getAttribute("validates-with");
 
-      if (valid === null) {
-        clearValidations(element, validatorName)
-      } else if (valid) {
-        setAsValid(element, validatorName);
-      } else {
-        setAsInvalid(element, validatorName);
-      }
+    // Import the matching validator.js file
+    import("./validators/" + validatorName + ".js").then((module) => {
+      element.addEventListener('input', (event) => {
+        // Call the module's exported function when event is triggered
+        let valid = module["validate"](element.value);
+
+        if (valid === null) {
+          clearValidations(element, validatorName)
+        } else if (valid) {
+          setAsValid(element, validatorName);
+        } else {
+          setAsInvalid(element, validatorName);
+        }
+      });
     });
   });
-});
+}
 
 function setAsValid(field, idPrefix) {
   let validCheckField = document.getElementById(`${idPrefix}-valid-check`);
