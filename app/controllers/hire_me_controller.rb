@@ -10,10 +10,10 @@ class HireMeController < ApplicationController
 
   def create
     # Prevent spam into the database
-    return redirect_to "/hire_me/failure" if ::HireMe.count >= 15
+    return render partial: "/hire_me/failure" if ::HireMe.count >= 15
 
     hire_me = ::HireMe.create! create_params
-    redirect_to "/hire_me/success"
+    render partial: "/hire_me/success"
   end
 
   def create_params

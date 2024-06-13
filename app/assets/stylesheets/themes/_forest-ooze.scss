@@ -8,6 +8,7 @@
   --super-dark-green-ooze: #011810;
   --black-ooze: #0a1110;
   --dark-black-ooze: #080a09;
+  --dark-red: #820021;
 }
 
 [data-bs-theme="dark-ooze"] {
@@ -20,6 +21,10 @@
   --bs-secondary-color: var(--green-ooze-secondary);
   --bs-navbar-color: white;
   --opposite-gradient: linear-gradient(7deg, var(--dark-black-ooze) 40%, var(--super-dark-green-ooze) 100%);
+  --bs-success-bg-subtle: var(--green-ooze);
+  --bs-success-text-emphasis: white;
+  --bs-danger-bg-subtle: var(--dark-red);
+  --bs-danger-text-emphasis: white;
 
   .gradient-background {
     background: linear-gradient(190deg, var(--dark-black-ooze) 0%, var(--super-dark-green-ooze) 100%);
