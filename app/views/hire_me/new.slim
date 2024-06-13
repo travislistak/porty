@@ -4,17 +4,18 @@
       .col-12.mt-5
         .text-center.mt-4
           h1.article-title.mb-5 Hire Me
-    = form_with model: @hire_me, url: hire_me_url do |f|
-      .row.justify-content-center
-        .col-8.mb-3
-          .mb-3
-            = f.label(:email, 'Email Address', class: 'form-label')
-            = f.text_field(:email, class: 'form-control')
-          .mb-3
-            = f.label(:company, 'Company', class: 'form-label')
-            = f.text_field(:company, class: 'form-control')
-          .mb-3
-            = f.label :content, 'Message', class: 'form-label'
-            = f.rich_text_area :content, class: 'form-control'
-          .mb-3.d-flex.justify-content-end
-            = f.submit "Submit", class: "btn btn-primary"
+      = turbo_frame_tag "hire_me_form" do
+        = form_with model: @hire_me, url: hire_me_url, id: dom_id(@hire_me) do |f|
+          .row.justify-content-center
+            .col-8.mb-3
+              .mb-3
+                = f.label(:email, 'Email Address', class: 'form-label')
+                = f.text_field(:email, class: 'form-control')
+              .mb-3
+                = f.label(:company, 'Company', class: 'form-label')
+                = f.text_field(:company, class: 'form-control')
+              .mb-3
+                = f.label :content, 'Message', class: 'form-label'
+                = f.rich_text_area :content, class: 'form-control'
+              .mb-3.d-flex.justify-content-end
+                = f.submit "Submit", class: "btn btn-primary"
