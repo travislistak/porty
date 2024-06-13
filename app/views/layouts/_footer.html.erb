@@ -10,7 +10,7 @@
     </ul>
     <div class="d-flex align-items-center justify-content-center text-center">
       <% if user_signed_in? %>
-        <span class="mb-3 mb-md-0 text-muted">Travis Listak <%= link_to "©", destroy_user_session_path, method: :delete, class: "stealth-link", data: { turbo: 'false' } %>
+        <span class="mb-3 mb-md-0 text-muted">Travis Listak <%= link_to "©", destroy_user_session_path, class: "stealth-link", data: { turbo_method: :delete } %>
           2024</span>
       <% else %>
         <span class="mb-3 mb-md-0 text-muted">Travis Listak <%= link_to "©", new_user_session_path, class: "stealth-link", data: { turbo: 'false' } %>
