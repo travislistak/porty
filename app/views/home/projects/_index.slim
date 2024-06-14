@@ -17,3 +17,14 @@
               = link_to link do
                 h3.title.project-title= project.title
               p= rich_to_plain_without_images(project.content).truncate(250)
+    .row.text-center
+      h3 Downloads
+      .row.text-centers.mb-3
+        h4 Simple Javascript Validations
+      .row
+        .col-4
+          = link_to "The Base Validator", "/validate.js", { download: "validate.js", class: "btn btn-primary" }
+        .col-4
+          = link_to "Credit Card Format", "/creditCardFormat.js", { download: "creditCarfFormat.js", class: "btn btn-primary" }
+        .col-4
+          = link_to "Routing Num Format (MICR)", "/routingNumberFormat.js", { download: "routingNumberFormat.js", class: "btn btn-primary" }
