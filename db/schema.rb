@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_222411) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "hire_mes", force: :cascade do |t|
+  create_table "contact_mes", force: :cascade do |t|
     t.string "email"
     t.string "company"
     t.datetime "created_at", null: false

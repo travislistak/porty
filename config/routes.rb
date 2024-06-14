@@ -3,11 +3,10 @@ Rails.application.routes.draw do
 
   root "home#index"
   resources :projects
-  # resources :hire_me, only: [:new, :create]
   get "/theme98" => "theme98#show"
-  get "/hire_me" => "hire_me#new"
-  post "/hire_me" => "hire_me#create"
-  get "/hire_me/submissions" => "hire_me#index"
+  get "/contact_me" => "contact_me#new"
+  post "/contact_me" => "contact_me#create"
+  get "/contact_me/submissions" => "contact_me#index"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

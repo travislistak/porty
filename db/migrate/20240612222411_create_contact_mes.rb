@@ -1,6 +1,6 @@
-class CreateHireMe < ActiveRecord::Migration[7.1]
+class CreateContactMes < ActiveRecord::Migration[7.1]
   def change
-    create_table :hire_mes do |t|
+    create_table :contact_mes do |t|
       t.string :email
       t.string :company
 
