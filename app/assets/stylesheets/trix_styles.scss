@@ -4,11 +4,26 @@
 .trix-active {
   background-color: var(--bs-border-color) !important;
 }
+trix-editor, .trix-content {
+  h1 {
+    font-size: 2rem;
+  }
+  blockquote {
+    h1 {
+      font-size: 1.1rem;
+    }
+  }
+  pre {
+    background-color: var(--bs-secondary-color) !important;
+    color: var(--bs-body-color) !important;
+  }
+}
 
 #article_content, #project_content {
   min-height: 50vh;
   resize: vertical;
 }
+
 #contact_me_content {
   height: 20vh;
   overflow: scroll;
