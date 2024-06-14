@@ -1,0 +1,24 @@
+.container-fluid.gradient-background
+  .container
+    .row
+      .col-12.mt-5
+        .text-center.mt-4
+          h2.article-title.mb-5 Contact Me
+      .vh-50
+        #contact_me_form
+          = form_with model: @contact_me, url: contact_me_url, id: dom_id(@contact_me) do |f|
+            .row.justify-content-center
+              .col-8.mb-3
+                .mb-3
+                  = f.label(:email, 'Email Address', class: 'form-label')
+                  = f.text_field(:email, class: 'form-control')
+                .mb-3
+                  = f.label(:company, 'Company', class: 'form-label')
+                  = f.text_field(:company, class: 'form-control')
+                .mb-3
+                  = f.label(:message, 'Short Message', class: 'form-label')
+                  = f.text_field(:message, class: 'form-control')
+                  / = f.label :content, 'Message', class: 'form-label'
+                  / = f.rich_text_area :content, class: 'form-control', maxlength: "50"
+                .mb-3.d-flex.justify-content-end
+                  = f.submit "Submit", class: "btn btn-primary"

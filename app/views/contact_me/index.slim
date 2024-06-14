@@ -1,0 +1,17 @@
+.container-fluid.gradient-background
+  .container.pb-3.vh-100.overflow-y-scroll
+    .row
+      .col-12.mt-5
+        .text-center.mt-4
+          h2.article-title.mb-5 Contact Me Submissions
+    .accordion id="submissionsAccordion"
+      - @submissions.each_with_index do |submission, index|
+        .accordion-item
+          h2.accordion-header
+            button.accordion-button.collapsed type="button" data-bs-toggle="collapse" data-bs-target="#accord-#{index}" aria-expanded="true" aria-controls="accord-#{index}"
+              = "#{index + 1}. #{submission.email} @ #{submission.company} Received: #{submission.created_at.strftime("%B %d, %Y")}"
+          .accordion-collapse.collapse id="accord-#{index}" data-bs-parent="#submissionsAccordion"
+            .accordion-body
+              p= submission.message
+
+
