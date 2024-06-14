@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_222411) do
   create_table "contact_mes", force: :cascade do |t|
     t.string "email"
     t.string "company"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

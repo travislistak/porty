@@ -3,6 +3,7 @@ class CreateContactMes < ActiveRecord::Migration[7.1]
     create_table :contact_mes do |t|
       t.string :email
       t.string :company
+      t.string :message
 
       t.timestamps
     end

@@ -12,6 +12,6 @@
               = "#{index + 1}. #{submission.email} @ #{submission.company} Received: #{submission.created_at.strftime("%B %d, %Y")}"
           .accordion-collapse.collapse id="accord-#{index}" data-bs-parent="#submissionsAccordion"
             .accordion-body
-              p= submission.content
+              p= submission.message
 
 

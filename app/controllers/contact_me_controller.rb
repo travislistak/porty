@@ -19,6 +19,6 @@ class ContactMeController < ApplicationController
   end
 
   def create_params
-    params.require(:contact_me).permit(:email, :company, :content)
+    params.require(:contact_me).permit(:email, :company, :message)
   end
 end
