@@ -47,17 +47,6 @@ h4 {
   font-weight: lighter;
 }
 
-.trix-content, trix-editor {
-  pre {
-    background-color: var(--bs-secondary-color) !important;
-    color: var(--bs-body-color) !important;
-  }
-}
-
-blockquote {
-  font-size: 1.05rem;
-}
-
 .card-title {
   font-size: 2rem;
 }
@@ -159,6 +148,21 @@ p.indent {
   .navbar {
     background: var(--opposite-gradient);
     position: static;
+  }
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
   }
 }
 
