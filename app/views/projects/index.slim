@@ -6,14 +6,14 @@
 .row
   - @projects.each do |project|
     - link = project.link? ? project.link : project_path(project)
-    .col-md-6.article-box
+    .col-md-6
       = link_to link do
         .index-header-image-container
           - if project.header_image.present?
             = image_tag(project.header_image, class: 'header-image')
           - else
             = image_tag("placeholder.png", class: 'header-image')
-        .article-summary.d-flex.flex-column.justify-content-between
+        .d-flex.flex-column.justify-content-between
           h2.title= project.title
           p= rich_to_plain_without_images(project.content)
           .flex-grow-1.d-flex.align-items-end
