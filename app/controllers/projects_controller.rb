@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
     if current_user
       @projects = ::Project.unscope(where: :published).page(1).per(5)
     else
-      @articles = ::Project.order(:created_at).page(1).per(5)
+      @projects = ::Project.order(:created_at).page(1).per(5)
     end
   end
 

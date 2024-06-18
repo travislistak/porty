@@ -8,15 +8,8 @@ $primary: #024225;
 @import "navigation";
 @import "home";
 @import "footer";
-@import "projects";
 @import "trix_styles";
 @import "image_modal";
-
-// faded borders https://codepen.io/ptb/pen/kaWjeL
-
-:root {
-  --off-white: #707070;
-}
 
 html {
   box-sizing: border-box;
@@ -61,6 +54,10 @@ p.indent {
 
 .vh-50 {
   height: 50vh;
+}
+
+.top-25 {
+  top: 25%;
 }
 
 .valid {

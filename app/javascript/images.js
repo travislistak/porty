@@ -7,6 +7,8 @@ function registerListeners() {
   let modalImage = document.getElementById("modalImage");
   let modalClose = document.getElementById("modalClose");
 
+  if (imageModal == null || modalImage == null || modalClose == null) return;
+
   imageModal.addEventListener("click", () => {
     imageModal.style.display = "none";
   });
