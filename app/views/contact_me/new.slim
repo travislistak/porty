@@ -1,6 +1,16 @@
 .container-fluid.gradient-background
   .container
     .row
+      .col-12
+        p TEST ROW
+      .col-12.resume-background.mt-5
+        / = picture_tag("pathfinder-resume-background.png", image: { class: 'img-element' })
+        = image_tag("pathfinder-resume-background.png", class: "img-element")
+        .resume-text.mt-5
+          p Text over the image
+
+  .container
+    .row
       .col-12.mt-5
         .text-center.mt-4
           h2.mb-5 Contact Me

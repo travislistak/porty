@@ -88,15 +88,28 @@ p.indent {
   background-color: transparent;
 }
 
+.resume-background {
+  //background-image: url("pathfinder-resume-background.png");
+  //background-repeat: no-repeat;
+  //background-size:contain;
+  //background-position:center;
+}
+.img-element {
+  object-fit: contain;
+  position: static;
+  width: 100%;
+}
+.resume-text {
+  position: absolute;
+  top: 20px;
+}
+
 .box-shadow {
   filter: drop-shadow(7px 7px 6px #000)
 }
 
 .title-column {
   align-self: center;
-}
-
-.title-column {
   animation: 1.6s ease-in-out 0s 1 fadeFromLeft;
 }
 
